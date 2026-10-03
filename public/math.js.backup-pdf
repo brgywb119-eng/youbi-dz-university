@@ -1,0 +1,307 @@
+const mathData = {
+  "التحليل": {
+    lessons: [
+      ["📖 درس Analyse 1 - السنة الأولى", "https://www.youtube.com/results?search_query=Analyse+1+L1+Algérie"],
+      ["📖 النهايات والاستمرارية", "https://www.youtube.com/results?search_query=النهايات+والاستمرارية+Analyse+1"]
+    ],
+    summaries: [
+      ["📝 ملخص Analyse 1", "https://www.youtube.com/results?search_query=ملخص+Analyse+1+L1+Algérie"],
+      ["📝 ملخص النهايات", "https://www.youtube.com/results?search_query=ملخص+النهايات+L1+رياضيات"]
+    ],
+    exercises: [
+      ["🧩 تمارين Analyse 1", "https://www.youtube.com/results?search_query=تمارين+Analyse+1+L1+Algérie"],
+      ["🧩 TD Analyse 1", "https://www.youtube.com/results?search_query=TD+Analyse+1+L1+Algérie"]
+    ],
+    videos: [
+      ["▶️ فيديوهات Analyse 1", "https://www.youtube.com/results?search_query=Analyse+1+L1+رياضيات+الجزائر"],
+      ["▶️ شرح النهايات", "https://www.youtube.com/results?search_query=شرح+النهايات+Analyse+1"]
+    ]
+  },
+
+  "الجبر": {
+    lessons: [
+      ["📖 درس Algèbre 1", "https://www.youtube.com/results?search_query=Algèbre+1+L1+Algérie"],
+      ["📖 الفضاءات المتجهية", "https://www.youtube.com/results?search_query=الفضاءات+المتجهية+Algèbre+L1"]
+    ],
+    summaries: [
+      ["📝 ملخص Algèbre 1", "https://www.youtube.com/results?search_query=ملخص+Algèbre+1+L1+Algérie"],
+      ["📝 ملخص الجبر", "https://www.youtube.com/results?search_query=ملخص+الجبر+السنة+الأولى+جامعة"]
+    ],
+    exercises: [
+      ["🧩 تمارين Algèbre 1", "https://www.youtube.com/results?search_query=تمارين+Algèbre+1+L1+Algérie"],
+      ["🧩 TD Algèbre 1", "https://www.youtube.com/results?search_query=TD+Algèbre+1+L1"]
+    ],
+    videos: [
+      ["▶️ فيديوهات Algèbre 1", "https://www.youtube.com/results?search_query=Algèbre+1+L1+Algérie"],
+      ["▶️ شرح الجبر", "https://www.youtube.com/results?search_query=شرح+الجبر+L1+رياضيات"]
+    ]
+  },
+
+  "الهندسة": {
+    lessons: [
+      ["📖 درس الهندسة - السنة الأولى", "https://www.youtube.com/results?search_query=هندسة+L1+رياضيات+الجزائر"],
+      ["📖 الهندسة التحليلية", "https://www.youtube.com/results?search_query=الهندسة+التحليلية+L1"]
+    ],
+    summaries: [
+      ["📝 ملخص الهندسة", "https://www.youtube.com/results?search_query=ملخص+الهندسة+L1+رياضيات"],
+      ["📝 ملخص الهندسة التحليلية", "https://www.youtube.com/results?search_query=ملخص+الهندسة+التحليلية"]
+    ],
+    exercises: [
+      ["🧩 تمارين الهندسة", "https://www.youtube.com/results?search_query=تمارين+الهندسة+L1+رياضيات"],
+      ["🧩 TD الهندسة", "https://www.youtube.com/results?search_query=TD+هندسة+L1+رياضيات"]
+    ],
+    videos: [
+      ["▶️ فيديوهات الهندسة", "https://www.youtube.com/results?search_query=هندسة+L1+رياضيات+الجزائر"],
+      ["▶️ الهندسة التحليلية", "https://www.youtube.com/results?search_query=الهندسة+التحليلية+شرح"]
+    ]
+  },
+
+  "الإحصاء": {
+    lessons: [
+      ["📖 درس الإحصاء 1", "https://www.youtube.com/results?search_query=إحصاء+1+L1+الجزائر"],
+      ["📖 مبادئ الإحصاء", "https://www.youtube.com/results?search_query=مبادئ+الإحصاء+السنة+الأولى+جامعة"]
+    ],
+    summaries: [
+      ["📝 ملخص الإحصاء 1", "https://www.youtube.com/results?search_query=ملخص+إحصاء+1+L1+الجزائر"],
+      ["📝 ملخص الاحتمالات", "https://www.youtube.com/results?search_query=ملخص+الاحتمالات+والإحصاء+L1"]
+    ],
+    exercises: [
+      ["🧩 تمارين الإحصاء", "https://www.youtube.com/results?search_query=تمارين+إحصاء+1+L1+الجزائر"],
+      ["🧩 TD الإحصاء", "https://www.youtube.com/results?search_query=TD+إحصاء+1+L1"]
+    ],
+    videos: [
+      ["▶️ فيديوهات الإحصاء", "https://www.youtube.com/results?search_query=إحصاء+1+L1+الجزائر"],
+      ["▶️ شرح الإحصاء", "https://www.youtube.com/results?search_query=شرح+الإحصاء+L1+جامعة"]
+    ]
+  },
+
+  "الفيزياء": {
+    lessons: [
+      ["📖 Physique 1 - السنة الأولى", "https://www.youtube.com/results?search_query=Physique+1+L1+Algérie"],
+      ["📖 الميكانيك", "https://www.youtube.com/results?search_query=ميكانيك+L1+رياضيات+الجزائر"]
+    ],
+    summaries: [
+      ["📝 ملخص Physique 1", "https://www.youtube.com/results?search_query=ملخص+Physique+1+L1+Algérie"],
+      ["📝 ملخص الميكانيك", "https://www.youtube.com/results?search_query=ملخص+الميكانيك+L1"]
+    ],
+    exercises: [
+      ["🧩 تمارين Physique 1", "https://www.youtube.com/results?search_query=تمارين+Physique+1+L1+Algérie"],
+      ["🧩 TD الميكانيك", "https://www.youtube.com/results?search_query=TD+ميكانيك+L1+الجزائر"]
+    ],
+    videos: [
+      ["▶️ فيديوهات Physique 1", "https://www.youtube.com/results?search_query=Physique+1+L1+Algérie"],
+      ["▶️ شرح الميكانيك", "https://www.youtube.com/results?search_query=شرح+الميكانيك+L1+جامعة"]
+    ]
+  },
+
+  "الخوارزميات": {
+    lessons: [
+      ["📖 خوارزميات - السنة الأولى", "https://elearning.univ-eloued.dz/course/info.php?id=2031"],
+      ["📖 Algorithmique L1", "https://www.youtube.com/results?search_query=Algorithmique+L1+Algérie"]
+    ],
+    summaries: [
+      ["📝 ملخص الخوارزميات", "https://www.youtube.com/results?search_query=ملخص+الخوارزميات+L1+الجزائر"],
+      ["📝 Résumé Algorithmique L1", "https://www.youtube.com/results?search_query=Résumé+Algorithmique+L1+Algérie"]
+    ],
+    exercises: [
+      ["🧩 تمارين الخوارزميات", "https://www.youtube.com/results?search_query=تمارين+الخوارزميات+L1+الجزائر"],
+      ["🧩 TD Algorithmique", "https://www.youtube.com/results?search_query=TD+Algorithmique+L1+Algérie"]
+    ],
+    videos: [
+      ["▶️ شرح الخوارزميات", "https://www.youtube.com/results?search_query=شرح+الخوارزميات+L1+الجزائر"],
+      ["▶️ Algorithmique L1", "https://www.youtube.com/results?search_query=Algorithmique+L1+Algérie"]
+    ]
+  },
+
+  "اللغة الأجنبية": {
+    lessons: [
+      ["📖 English for Mathematics", "https://www.youtube.com/results?search_query=English+for+Mathematics+L1+Algérie"]
+    ],
+    summaries: [
+      ["📝 ملخص English", "https://www.youtube.com/results?search_query=English+L1+Mathematics+Algérie"]
+    ],
+    exercises: [
+      ["🧩 تمارين English", "https://www.youtube.com/results?search_query=English+L1+exercises+Algérie"]
+    ],
+    videos: [
+      ["▶️ English for Mathematics", "https://www.youtube.com/results?search_query=English+for+Mathematics+L1"]
+    ]
+  },
+
+  "منهجية العمل الجامعي": {
+    lessons: [
+      ["📖 منهجية العمل الجامعي", "https://www.youtube.com/results?search_query=منهجية+العمل+الجامعي+الجزائر"]
+    ],
+    summaries: [
+      ["📝 ملخص منهجية العمل الجامعي", "https://www.youtube.com/results?search_query=ملخص+منهجية+العمل+الجامعي"]
+    ],
+    exercises: [
+      ["🧩 تطبيقات المنهجية", "https://www.youtube.com/results?search_query=تمارين+منهجية+العمل+الجامعي"]
+    ],
+    videos: [
+      ["▶️ شرح منهجية العمل الجامعي", "https://www.youtube.com/results?search_query=منهجية+العمل+الجامعي+جامعة+الجزائر"]
+    ]
+  }
+};
+
+function cleanText(text) {
+  return (text || "")
+    .replace(/\s+/g, " ")
+    .replace(/[📖📝🧩▶️📐🎓]/g, "")
+    .trim();
+}
+
+function getMathSubject(card) {
+  const text = cleanText(card.textContent);
+
+  for (const name of Object.keys(mathData)) {
+    if (text === name || text.includes(name)) {
+      return name;
+    }
+  }
+
+  return null;
+}
+
+function resourceHTML(items) {
+  if (!items || items.length === 0) {
+    return '<div class="empty-learning">لا يوجد محتوى حاليا.</div>';
+  }
+
+  return items.map(item => `
+    <a class="learning-card"
+       href="${item[1]}"
+       target="_blank"
+       rel="noopener noreferrer"
+       style="display:flex!important;justify-content:space-between;align-items:center;text-decoration:none;cursor:pointer;">
+      <span>${item[0]}</span>
+      <strong>فتح ↗</strong>
+    </a>
+  `).join("");
+}
+
+function showMathSubject(subject) {
+  const data = mathData[subject];
+  if (!data) return;
+
+  const old = document.querySelector(".math-resource-overlay");
+  if (old) old.remove();
+
+  const overlay = document.createElement("div");
+  overlay.className = "math-resource-overlay";
+
+  overlay.style.cssText = `
+    position:fixed;
+    inset:0;
+    z-index:999999;
+    background:rgba(0,0,0,.82);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+  `;
+
+  overlay.innerHTML = `
+    <div style="
+      width:min(850px,100%);
+      max-height:90vh;
+      overflow:auto;
+      background:#101522;
+      color:#fff;
+      border-radius:22px;
+      padding:20px;
+      border:1px solid rgba(255,255,255,.15);
+      box-shadow:0 20px 80px rgba(0,0,0,.6);
+      direction:rtl;
+    ">
+      <button id="mathClose" style="
+        float:left;
+        border:0;
+        background:#222b3d;
+        color:white;
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        font-size:25px;
+        cursor:pointer;
+      ">×</button>
+
+      <div style="padding:10px 5px 20px;text-align:right;">
+        <div style="font-size:14px;opacity:.7;">رياضيات — السنة الأولى</div>
+        <h2 style="margin:5px 0;">📐 ${subject}</h2>
+      </div>
+
+      <div id="mathTabs" style="
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:7px;
+        margin-bottom:15px;
+      ">
+        <button data-tab="lessons">📖 الدروس</button>
+        <button data-tab="summaries">📝 الملخصات</button>
+        <button data-tab="exercises">🧩 التمارين</button>
+        <button data-tab="videos">▶️ الفيديوهات</button>
+      </div>
+
+      <div id="mathContent"></div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  overlay.querySelectorAll("#mathTabs button").forEach(btn => {
+    btn.style.cssText = `
+      border:1px solid rgba(255,255,255,.15);
+      background:#182235;
+      color:white;
+      padding:12px 5px;
+      border-radius:12px;
+      cursor:pointer;
+      font-size:14px;
+    `;
+
+    btn.onclick = () => {
+      overlay.querySelectorAll("#mathTabs button").forEach(b => {
+        b.style.background = "#182235";
+      });
+
+      btn.style.background = "#284d72";
+
+      document.getElementById("mathContent").innerHTML =
+        resourceHTML(data[btn.dataset.tab]);
+    };
+  });
+
+  overlay.querySelector("#mathClose").onclick = () => overlay.remove();
+
+  overlay.addEventListener("click", e => {
+    if (e.target === overlay) overlay.remove();
+  });
+
+  // افتح الدروس مباشرة
+  overlay.querySelector('[data-tab="lessons"]').click();
+}
+
+document.addEventListener("click", function(e) {
+  const card = e.target.closest(".subject-card");
+  if (!card) return;
+
+  const panel = card.closest(".subjects-panel");
+  if (!panel) return;
+
+  const panelText = cleanText(panel.textContent);
+
+  if (!panelText.includes("رياضيات")) return;
+
+  const subject = getMathSubject(card);
+
+  if (!subject) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+  e.stopImmediatePropagation();
+
+  showMathSubject(subject);
+}, true);
+
+console.log("✅ Math resources loaded:", Object.keys(mathData).length);

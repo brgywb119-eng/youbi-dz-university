@@ -1,0 +1,499 @@
+(function () {
+
+const mathData = {
+
+"رياضيات": {
+
+"التحليل": {
+lessons:[
+["📄 مطبوعة التحليل 1 - 2024 - جامعة أم البواقي","https://www.univ-oeb.dz/fsesnv/%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-1-%D8%AF-%D9%86%D8%B3%D9%8A%D8%A8-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D9%85/"],
+["📚 Analyse 1 - Cours - 2023/2024 - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+summaries:[
+["📝 التحليل 1 - مطبوعة 2024","https://www.univ-oeb.dz/fsesnv/%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-1-%D8%AF-%D9%86%D8%B3%D9%8A%D8%A8-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D9%85/"]
+],
+exercises:[
+["🧩 Analyse 1 - TD وتمارين وتصحيحات - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+videos:[
+["▶️ تحليل 1 - سنة أولى رياضيات - بحث يوتيوب","https://www.youtube.com/results?search_query=تحليل+1+سنة+أولى+رياضيات+الجزائر"]
+]
+},
+
+"الجبر": {
+lessons:[
+["📄 Algèbre 1 - Cours - 2023/2024 - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+summaries:[
+["📝 موارد Algèbre 1 - السنة الأولى - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+exercises:[
+["🧩 Algèbre 1 - TD - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"],
+["🧩 Algèbre 1 - Corrigés - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+videos:[
+["▶️ الجبر 1 - سنة أولى رياضيات - بحث يوتيوب","https://www.youtube.com/results?search_query=Algèbre+1+سنة+أولى+رياضيات+الجزائر"]
+]
+},
+
+"الهندسة": {
+lessons:[
+["📄 الهندسة - السنة الأولى رياضيات - موارد جامعية 2024","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+summaries:[
+["📝 ملخصات الهندسة - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+exercises:[
+["🧩 تمارين الهندسة - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+videos:[
+["▶️ الهندسة - سنة أولى رياضيات الجزائر","https://www.youtube.com/results?search_query=هندسة+سنة+أولى+رياضيات+الجزائر"]
+]
+},
+
+"الإحصاء": {
+lessons:[
+["📄 الإحصاء 1 - السنة الأولى رياضيات - موارد جامعية 2024","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+summaries:[
+["📝 ملخصات الإحصاء 1 - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+exercises:[
+["🧩 تمارين الإحصاء 1 - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+videos:[
+["▶️ الإحصاء 1 - سنة أولى رياضيات الجزائر","https://www.youtube.com/results?search_query=إحصاء+1+سنة+أولى+رياضيات+الجزائر"]
+]
+},
+
+"الفيزياء": {
+lessons:[
+["📄 الفيزياء - السنة الأولى رياضيات - موارد جامعية 2024","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+summaries:[
+["📝 ملخصات الفيزياء - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+exercises:[
+["🧩 تمارين الفيزياء - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+videos:[
+["▶️ فيزياء سنة أولى رياضيات - الجزائر","https://www.youtube.com/results?search_query=فيزياء+سنة+أولى+رياضيات+الجزائر"]
+]
+},
+
+ "الخوارزميات": {
+lessons:[
+["📘 الدرس 1: مقدمة في الخوارزميات","data:text/plain;charset=utf-8," + encodeURIComponent(`
+الخوارزميات - الدرس 1
+
+الخوارزمية هي مجموعة من الخطوات المرتبة والمنطقية لحل مشكلة معينة.
+
+مثال:
+لحساب مجموع عددين:
+1. إدخال العدد الأول A.
+2. إدخال العدد الثاني B.
+3. حساب S = A + B.
+4. عرض S.
+
+الشكل العام:
+Début
+  Lire A
+  Lire B
+  S ← A + B
+  Écrire S
+Fin
+`)],
+["📘 الدرس 2: المتغيرات وأنواع البيانات","data:text/plain;charset=utf-8," + encodeURIComponent(`
+الخوارزميات - الدرس 2
+
+المتغير هو مكان في الذاكرة نخزن فيه قيمة يمكن أن تتغير أثناء تنفيذ البرنامج.
+
+أهم الأنواع:
+- Entier: عدد صحيح.
+- Réel: عدد عشري.
+- Caractère: محرف.
+- Chaîne: سلسلة نصية.
+- Booléen: صحيح أو خطأ.
+
+مثال:
+A ← 10
+B ← 5
+S ← A + B
+`)],
+["📘 الدرس 3: العمليات الحسابية والمنطقية","data:text/plain;charset=utf-8," + encodeURIComponent(`
+الخوارزميات - الدرس 3
+
+العمليات الحسابية الأساسية:
++ الجمع
+- الطرح
+* الضرب
+/ القسمة
+
+ومن العمليات المهمة:
+MOD : باقي القسمة
+DIV : القسمة الصحيحة
+
+العمليات المنطقية:
+ET = AND
+OU = OR
+NON = NOT
+
+مثال:
+A ← 10
+B ← 3
+R ← A MOD B
+النتيجة R = 1
+`)],
+["📘 الدرس 4: التعليمات الشرطية If / Else","data:text/plain;charset=utf-8," + encodeURIComponent(`
+الخوارزميات - الدرس 4
+
+نستعمل الشرط لاتخاذ قرار حسب قيمة معينة.
+
+مثال:
+
+Si A >= 10 Alors
+    Écrire "ناجح"
+Sinon
+    Écrire "راسب"
+FinSi
+
+يمكن استعمال:
+>
+<
+>=
+<=
+=
+<>
+
+الشرط يسمح للبرنامج بتنفيذ تعليمات مختلفة حسب الحالة.
+`)],
+["📘 الدرس 5: الحلقات التكرارية For / While","data:text/plain;charset=utf-8," + encodeURIComponent(`
+الخوارزميات - الدرس 5
+
+الحلقات تستعمل لتكرار مجموعة من التعليمات.
+
+مثال For:
+
+Pour i de 1 à 5 Faire
+    Écrire i
+FinPour
+
+النتيجة:
+1
+2
+3
+4
+5
+
+مثال While:
+
+TantQue i <= 5 Faire
+    Écrire i
+    i ← i + 1
+FinTantQue
+`)],
+["📘 الدرس 6: الجداول والمصفوفات","data:text/plain;charset=utf-8," + encodeURIComponent(`
+الخوارزميات - الدرس 6
+
+المصفوفة تسمح بتخزين عدة قيم من نفس النوع.
+
+مثال:
+
+T[1] ← 10
+T[2] ← 20
+T[3] ← 30
+
+يمكن استعمال حلقة لمعالجة عناصر المصفوفة:
+
+Pour i de 1 à 3 Faire
+    Écrire T[i]
+FinPour
+`)],
+["📘 الدرس 7: الدوال والإجراءات","data:text/plain;charset=utf-8," + encodeURIComponent(`
+الخوارزميات - الدرس 7
+
+الدالة أو الإجراء يسمحان بتنظيم البرنامج وتقسيمه إلى أجزاء.
+
+مثال دالة:
+
+Fonction Carre(x)
+    Retourner x * x
+FinFonction
+
+إذا كان:
+x = 5
+
+فالنتيجة:
+Carre(5) = 25
+`)],
+["📘 الدرس 8: الخوارزميات والبرمجة بلغة C","data:text/plain;charset=utf-8," + encodeURIComponent(`
+الخوارزميات - الدرس 8
+
+بعد تعلم الخوارزميات يمكن تحويلها إلى لغة برمجة مثل C.
+
+الخوارزمية:
+
+Début
+  Lire A
+  Lire B
+  S ← A + B
+  Écrire S
+Fin
+
+الفكرة نفسها يمكن تطبيقها في لغة C باستعمال:
+scanf لإدخال البيانات.
+printf لإظهار النتائج.
+`)],
+],
+summaries:[
+["📝 ملخص أساسيات الخوارزميات","data:text/plain;charset=utf-8," + encodeURIComponent(`
+الخوارزمية = خطوات مرتبة لحل مشكلة.
+المتغير = مكان لتخزين قيمة.
+الشرط = اتخاذ قرار.
+الحلقة = تكرار تعليمات.
+المصفوفة = مجموعة عناصر من نفس النوع.
+الدالة = جزء مستقل ينفذ مهمة محددة.
+`)],
+["📝 ملخص الشروط والحلقات","data:text/plain;charset=utf-8," + encodeURIComponent(`
+Si / Sinon تستعمل لاتخاذ القرار.
+Pour تستعمل للتكرار بعدد معروف.
+TantQue تستعمل للتكرار ما دام الشرط صحيحا.
+`)],
+["📝 ملخص الجداول والدوال","data:text/plain;charset=utf-8," + encodeURIComponent(`
+المصفوفة تخزن عدة قيم.
+الوصول إلى عنصر يكون باستعمال الفهرس.
+الدالة تستقبل معاملات ويمكن أن ترجع نتيجة.
+`)],
+],
+exercises:[
+["🧩 تمارين المتغيرات والعمليات","#"],
+["🧩 تمارين الشروط","#"],
+["🧩 تمارين الحلقات","#"],
+["🧩 تمارين الجداول والمصفوفات","#"],
+["🧩 تمارين الخوارزميات مع الحل","#"]
+],
+videos:[
+["▶️ الخوارزميات للمبتدئين - سنة أولى جامعة","https://www.youtube.com/results?search_query=خوارزميات+سنة+أولى+جامعة+الجزائر"],
+["▶️ Algorithmique - Algérie","https://www.youtube.com/results?search_query=Algorithmique+1ère+année+université+Algérie"],
+["▶️ الخوارزميات: الشروط والحلقات","https://www.youtube.com/results?search_query=خوارزميات+الشروط+الحلقات"]
+]
+},
+
+"اللغة الأجنبية": {
+lessons:[
+["📄 English for Mathematics","#"]
+],
+summaries:[
+["📝 ملخص اللغة الأجنبية","#"]
+],
+exercises:[
+["🧩 تمارين English","#"]
+],
+videos:[
+["▶️ English for Mathematics","https://www.youtube.com/results?search_query=English+for+mathematics+students"]
+]
+},
+
+"منهجية العمل الجامعي": {
+lessons:[
+["📄 منهجية العمل الجامعي","#"],
+["📄 البحث العلمي","#"],
+["📄 كيفية إعداد بحث جامعي","#"]
+],
+summaries:[
+["📝 ملخص المنهجية","#"]
+],
+exercises:[
+["🧩 تطبيقات في المنهجية","#"]
+],
+videos:[
+["▶️ منهجية العمل الجامعي","https://www.youtube.com/results?search_query=منهجية+العمل+الجامعي+سنة+أولى"]
+]
+}
+
+}
+
+};
+
+function openMath(card){
+
+const panel=card.closest(".subjects-panel");
+if(!panel)return;
+
+const title=panel.querySelector("h3");
+if(!title)return;
+
+const specialty=title.textContent.replace("🎓","").trim();
+
+if(specialty!=="رياضيات")return;
+
+const subject=card.textContent.replace("📚","").trim();
+const info=mathData["رياضيات"][subject];
+
+if(!info)return;
+
+document.querySelector(".learning-overlay")?.remove();
+
+const overlay=document.createElement("div");
+overlay.className="learning-overlay";
+
+function cards(items){
+return items.map(function(item){
+return `
+<a class="learning-card" href="${item[1]}" target="_blank" rel="noopener">
+<span>${item[0]}</span>
+<span class="open-resource">فتح ↗</span>
+</a>`;
+}).join("");
+}
+
+overlay.innerHTML=`
+<div class="learning-box">
+
+<button class="learning-close">×</button>
+
+<div class="learning-header">
+
+<div class="learning-icon">∑</div>
+
+<div>
+<div class="learning-label">رياضيات</div>
+<h2>${subject}</h2>
+<small>السنة الأولى ليسانس</small>
+</div>
+
+</div>
+
+<div class="learning-tabs">
+
+<button class="learning-tab active" data-tab="lessons">📖 الدروس</button>
+<button class="learning-tab" data-tab="summaries">📝 الملخصات</button>
+<button class="learning-tab" data-tab="exercises">🧩 التمارين</button>
+<button class="learning-tab" data-tab="videos">▶️ فيديوهات</button>
+
+</div>
+
+<div class="learning-content">
+
+<section class="learning-section active" data-section="lessons">
+${cards(info.lessons)}
+</section>
+
+<section class="learning-section" data-section="summaries">
+${cards(info.summaries)}
+</section>
+
+<section class="learning-section" data-section="exercises">
+${cards(info.exercises)}
+</section>
+
+<section class="learning-section" data-section="videos">
+${cards(info.videos)}
+</section>
+
+</div>
+
+</div>
+`;
+
+document.body.appendChild(overlay);
+
+overlay.querySelector(".learning-close").onclick=()=>{
+overlay.remove();
+};
+
+overlay.addEventListener("click",function(e){
+if(e.target===overlay)overlay.remove();
+});
+
+overlay.querySelectorAll(".learning-tab").forEach(function(tab){
+
+tab.onclick=function(){
+
+overlay.querySelectorAll(".learning-tab")
+.forEach(x=>x.classList.remove("active"));
+
+overlay.querySelectorAll(".learning-section")
+.forEach(x=>x.classList.remove("active"));
+
+tab.classList.add("active");
+
+const section=overlay.querySelector(
+'[data-section="'+tab.dataset.tab+'"]'
+);
+
+if(section)section.classList.add("active");
+
+};
+
+});
+
+}
+
+document.addEventListener("click",function(e){
+
+const card=e.target.closest(".subject-card");
+
+if(card)openMath(card);
+
+});
+
+console.log("✅ نظام رياضيات جاهز");
+
+})();
+
+// ===== موارد حقيقية للخوارزميات =====
+
+(function () {
+  const algorithmResources = {
+    lessons: [
+      {
+        title: "📘 مطبوعة الخوارزميات وبنية المعطيات 1 - جامعة الوادي",
+        url: "https://elearning.univ-eloued.dz/mod/resource/view.php?id=8117"
+      },
+      {
+        title: "📚 مقرر Algorithmique et structure de données - جامعة الوادي",
+        url: "https://elearning.univ-eloued.dz/course/info.php?id=2031"
+      }
+    ],
+
+    summaries: [
+      {
+        title: "📝 دعم الخوارزميات وبنية المعطيات 1",
+        url: "https://elearning.univ-eloued.dz/mod/resource/view.php?id=8117"
+      },
+      {
+        title: "📝 مقرر الخوارزميات - السنة الأولى MI",
+        url: "https://elearning.univ-eloued.dz/course/info.php?id=2031"
+      }
+    ],
+
+    exercises: [
+      {
+        title: "🧩 تمارين وتطبيقات الخوارزميات",
+        url: "https://elearning.univ-eloued.dz/course/index.php?categoryid=1121"
+      },
+      {
+        title: "🧩 خوارزميات وبنية المعطيات 1 - تمارين ودروس",
+        url: "https://elearning.univ-eloued.dz/course/info.php?id=586"
+      }
+    ],
+
+    videos: [
+      {
+        title: "▶️ خوارزميات 1 - السنة الأولى رياضيات",
+        url: "https://www.youtube.com/results?search_query=خوارزميات+1+سنة+أولى+رياضيات+الجزائر"
+      },
+      {
+        title: "▶️ Algorithmique L1 - Algérie",
+        url: "https://www.youtube.com/results?search_query=Algorithmique+L1+Algérie"
+      },
+      {
+        title: "▶️ الخوارزميات للمبتدئين - السنة الأولى جامعة",
+        url: "https://www.youtube.com/results?search_query=الخوارزميات+السنة+الأولى+جامعة+الجزائر"
+      }
+    ]
+  };
+
+  window.algorithmResources = algorithmResources;
+})();

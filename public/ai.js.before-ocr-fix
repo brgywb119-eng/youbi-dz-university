@@ -1,0 +1,214 @@
+(function () {
+  const old = document.getElementById("youbiAI");
+  if (old) old.remove();
+
+  const section = document.createElement("section");
+  section.id = "youbiAI";
+  section.innerHTML = `
+    <div class="ai-box">
+      <h2>🧠 خريطة فهم الدرس</h2>
+      <p>أضف صورة الدرس لتحويلها إلى خريطة فهم مجاناً.</p>
+
+      <label class="ai-upload">
+        🖼️ إضافة صورة الدرس
+        <input id="aiImage" type="file" accept="image/*" hidden>
+      </label>
+
+      <div id="aiImagePreview"></div>
+      <div id="aiResult"></div>
+    </div>
+  `;
+
+  document.body.appendChild(section);
+
+  const input = document.getElementById("aiImage");
+  const preview = document.getElementById("aiImagePreview");
+  const result = document.getElementById("aiResult");
+
+  function loadTesseract() {
+    return new Promise((resolve, reject) => {
+      if (window.Tesseract) {
+        resolve();
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src =
+        "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js";
+
+      script.onload = () => resolve();
+      script.onerror = () =>
+        reject(new Error("تعذر تحميل محرك قراءة الصور."));
+      
+      document.head.appendChild(script);
+    });
+  }
+
+  input.addEventListener("change", async function () {
+    const file = this.files && this.files[0];
+
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      result.innerHTML = "<p>❌ الملف ليس صورة.</p>";
+      return;
+    }
+
+    preview.innerHTML = `
+      <img src="${URL.createObjectURL(file)}"
+           style="max-width:100%;border-radius:15px;margin-top:15px;">
+    `;
+
+    result.innerHTML = `
+      <div class="ai-loading">
+        🔎 جاري قراءة الدرس...<br>
+        ⏳ أول مرة قد تأخذ بعض الوقت.
+      </div>
+    `;
+
+    try {
+      await loadTesseract();
+
+      const worker = await Tesseract.createWorker("ara+fra+eng", 1, {
+        workerPath:
+          "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/worker.min.js",
+
+        langPath:
+          "https://tessdata.projectnaptha.com/4.0.0",
+
+        corePath:
+          "https://cdn.jsdelivr.net/npm/tesseract.js-core@5.0.0",
+
+        logger: function (m) {
+          if (m && typeof m.progress === "number") {
+            const p = Math.round(m.progress * 100);
+
+            result.innerHTML = `
+              <div class="ai-loading">
+                🔎 قراءة الصورة... ${p}%
+              </div>
+            `;
+          }
+        }
+      });
+
+      const ret = await worker.recognize(file);
+
+      await worker.terminate();
+
+      const text = (ret.data.text || "").trim();
+
+      if (!text) {
+        result.innerHTML = `
+          <div class="ai-error">
+            ❌ لم أتمكن من قراءة الكتابة.
+            <br>
+            جرّب صورة أوضح ومضاءة جيداً.
+          </div>
+        `;
+        return;
+      }
+
+      createMindMap(text);
+
+    } catch (error) {
+      console.error("OCR ERROR:", error);
+
+      result.innerHTML = `
+        <div class="ai-error">
+          ❌ تعذر قراءة الصورة.<br>
+          تأكد من اتصال الإنترنت وحاول مرة أخرى.
+          <br><br>
+          <small>${error.message || ""}</small>
+        </div>
+      `;
+    }
+  });
+
+  function createMindMap(text) {
+    const lines = text
+      .split(/\r?\n/)
+      .map(x => x.trim())
+      .filter(x => x.length > 2);
+
+    if (!lines.length) {
+      result.innerHTML = "<p>❌ لم يتم العثور على نص.</p>";
+      return;
+    }
+
+    let title = lines[0];
+
+    if (title.length > 80) {
+      title = "خريطة فهم الدرس";
+    }
+
+    const groups = [];
+    let current = null;
+
+    lines.slice(1).forEach(line => {
+      const looksLikeTitle =
+        line.length < 70 &&
+        (
+          /^(\d+[\.\-)]|[أ-ي]\)|[IVX]+[\.\-])/.test(line) ||
+          line.endsWith(":") ||
+          line === line.toUpperCase()
+        );
+
+      if (looksLikeTitle || !current) {
+        current = {
+          title: line.replace(/^[-•*]\s*/, ""),
+          points: []
+        };
+
+        groups.push(current);
+      } else {
+        current.points.push(line);
+      }
+    });
+
+    if (!groups.length) {
+      groups.push({
+        title: "📚 محتوى الدرس",
+        points: lines.slice(1)
+      });
+    }
+
+    result.innerHTML = `
+      <div class="mind-map">
+        <div class="mind-center">
+          🧠 ${escapeHtml(title)}
+        </div>
+
+        <div class="mind-nodes">
+          ${groups.map(group => `
+            <div class="mind-node">
+              <h4>📌 ${escapeHtml(group.title)}</h4>
+
+              <ul>
+                ${group.points.length
+                  ? group.points.map(p =>
+                      `<li>${escapeHtml(p)}</li>`
+                    ).join("")
+                  : "<li>معلومة رئيسية</li>"
+                }
+              </ul>
+            </div>
+          `).join("")}
+        </div>
+
+        <div class="map-note">
+          ✅ تم إنشاء الخريطة من النص المقروء من الصورة.
+        </div>
+      </div>
+    `;
+  }
+
+  function escapeHtml(text) {
+    return String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+})();

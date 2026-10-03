@@ -1,0 +1,430 @@
+(function () {
+  "use strict";
+
+  const mathData = {
+
+    "التحليل": {
+      lessons: [
+        ["📄 Analyse 1 — Cours — Chapitre 1: La droite réelle",
+         "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/2023-2024/Licence/1er_annee/Sem1/TD/Analyse1/Chapitre%201%20Droite%20r%C3%A9elle.pdf"]
+      ],
+      summaries: [
+        ["📄 Analyse 1 — مراجعة السنة الأولى 2023-2024",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      exercises: [
+        ["📄 Analyse 1 — Série TD Chapitre 1",
+         "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/2023-2024/Licence/1er_annee/Sem1/TD/Analyse1/S%C3%A9rie%20de%20TD%20Chapitre%201%20la%20droite%20r%C3%A9elle.pdf"]
+      ],
+      videos: [
+        ["▶️ Analyse 1 — L1 Mathématiques",
+         "https://www.youtube.com/results?search_query=Analyse+1+L1+Mathématiques+Algérie"]
+      ]
+    },
+
+    "الجبر": {
+      lessons: [
+        ["📄 Algèbre 1 — وثائق 2023-2024",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      summaries: [
+        ["📄 Algèbre 1 — مراجعة السنة الأولى",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      exercises: [
+        ["📄 Algèbre 1 — TD 1",
+         "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/2023-2024/Licence/1er_annee/Sem1/TD/Alg%C3%A8bre1/TD%201%20logic.pdf"]
+      ],
+      videos: [
+        ["▶️ Algèbre 1 — L1 Mathématiques",
+         "https://www.youtube.com/results?search_query=Algèbre+1+L1+Mathématiques+Algérie"]
+      ]
+    },
+
+    "الهندسة": {
+      lessons: [
+        ["📄 الهندسة — وثائق L1 Maths 2023-2024",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      summaries: [
+        ["📄 ملخصات الهندسة — L1",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      exercises: [
+        ["📄 تمارين الهندسة — L1",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      videos: [
+        ["▶️ Géométrie — L1",
+         "https://www.youtube.com/results?search_query=Geometrie+L1+Maths+Algerie"]
+      ]
+    },
+
+    "الإحصاء": {
+      lessons: [
+        ["📄 Probabilités et statistique — L1",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      summaries: [
+        ["📄 ملخص الإحصاء والاحتمالات",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      exercises: [
+        ["📄 تمارين الإحصاء والاحتمالات",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      videos: [
+        ["▶️ Probabilités et statistiques L1",
+         "https://www.youtube.com/results?search_query=Probabilités+statistiques+L1+Algérie"]
+      ]
+    },
+
+    "الفيزياء": {
+      lessons: [
+        ["📄 Physique 1 — Cours — Analyse dimensionnelle",
+         "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/2023-2024/Licence/1er_annee/Sem1/TD/Physique1/Cours/Chapitre%20I%20Analyse%20dimensionnelle%202023-2024%20en%20Fran%C3%A7ais.pdf"]
+      ],
+      summaries: [
+        ["📄 ملخص فيزياء 1 — السنة الأولى",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      exercises: [
+        ["📄 تمارين فيزياء 1 — L1",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      videos: [
+        ["▶️ Physique 1 — L1 Algérie",
+         "https://www.youtube.com/results?search_query=Physique+1+L1+Algérie+université"]
+      ]
+    },
+
+    "الخوارزميات": {
+      lessons: [
+        ["📄 Algorithmique 1 — وثائق 2023-2024",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      summaries: [
+        ["📄 ملخص Algorithmique 1",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      exercises: [
+        ["📄 Algorithmique 1 — TD1",
+         "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/2023-2024/Licence/1er_annee/Sem1/TD/Algo1/TD1.pdf"],
+        ["📄 Algorithmique 1 — TP0",
+         "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/2023-2024/Licence/1er_annee/Sem1/TD/Algo1/TP0.pdf"]
+      ],
+      videos: [
+        ["▶️ Algorithmique 1 — L1",
+         "https://www.youtube.com/results?search_query=Algorithmique+1+L1+Algérie"]
+      ]
+    },
+
+    "اللغة الأجنبية": {
+      lessons: [
+        ["📄 English — السنة الأولى 2023-2024",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      summaries: [
+        ["📄 ملخص English",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      exercises: [
+        ["📄 تمارين English",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      videos: [
+        ["▶️ English universitaire",
+         "https://www.youtube.com/results?search_query=English+L1+université+Algérie"]
+      ]
+    },
+
+    "منهجية العمل الجامعي": {
+      lessons: [
+        ["📄 منهجية العمل الجامعي — L1",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      summaries: [
+        ["📄 ملخص المنهجية",
+         "https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+      ],
+      exercises: [],
+      videos: [
+        ["▶️ Méthodologie du travail universitaire",
+         "https://www.youtube.com/results?search_query=Méthodologie+travail+universitaire+Algérie"]
+      ]
+    }
+  };
+
+  function esc(s) {
+    return String(s || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function openMathSubject(subject) {
+    const data = mathData[subject];
+    if (!data) return;
+
+    const old = document.querySelector(".math-2024-overlay");
+    if (old) old.remove();
+
+    const overlay = document.createElement("div");
+    overlay.className = "math-2024-overlay";
+
+    overlay.innerHTML = `
+      <div class="math-2024-box">
+        <button class="math-2024-close">×</button>
+
+        <div class="math-2024-head">
+          <div class="math-2024-icon">📐</div>
+          <div>
+            <h2>${esc(subject)}</h2>
+            <p>رياضيات — السنة الأولى — 2023/2024</p>
+          </div>
+        </div>
+
+        <div class="math-2024-tabs">
+          <button data-tab="lessons">📖 الدروس PDF</button>
+          <button data-tab="summaries">📝 الملخصات PDF</button>
+          <button data-tab="exercises">🧩 التمارين PDF</button>
+          <button data-tab="videos">▶️ الفيديوهات</button>
+        </div>
+
+        <div class="math-2024-content"></div>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const content = overlay.querySelector(".math-2024-content");
+    const tabs = overlay.querySelectorAll("[data-tab]");
+
+    function render(tab) {
+      tabs.forEach(function (b) {
+        b.classList.toggle("active", b.dataset.tab === tab);
+      });
+
+      const list = data[tab] || [];
+
+      if (!list.length) {
+        content.innerHTML = `
+          <div class="math-empty">
+            لا توجد ملفات مضافة حاليا.
+          </div>
+        `;
+        return;
+      }
+
+      content.innerHTML = list.map(function (item) {
+        return `
+          <a class="math-resource"
+             href="${esc(item[1])}"
+             target="_blank"
+             rel="noopener noreferrer">
+            <span class="math-resource-icon">
+              ${tab === "videos" ? "▶️" : "📄"}
+            </span>
+            <span>
+              <strong>${esc(item[0])}</strong>
+              <small>
+                ${tab === "videos" ? "فتح الفيديوهات" : "فتح ملف PDF / وثائق 2023-2024"}
+              </small>
+            </span>
+            <span class="math-open">فتح ↗</span>
+          </a>
+        `;
+      }).join("");
+    }
+
+    tabs.forEach(function (b) {
+      b.addEventListener("click", function () {
+        render(b.dataset.tab);
+      });
+    });
+
+    overlay.querySelector(".math-2024-close").onclick = function () {
+      overlay.remove();
+    };
+
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) overlay.remove();
+    });
+
+    render("lessons");
+  }
+
+  document.addEventListener("click", function (e) {
+    const card = e.target.closest(".subject-card");
+    if (!card) return;
+
+    const panel = card.closest(".subjects-panel");
+    if (!panel) return;
+
+    if (!(panel.innerText || "").includes("رياضيات")) return;
+
+    const name =
+      card.querySelector("h4, h3, strong, .subject-name")?.textContent.trim()
+      || card.textContent.trim().split("\n")[0].trim();
+
+    if (!mathData[name]) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    openMathSubject(name);
+  }, true);
+
+  const style = document.createElement("style");
+
+  style.textContent = `
+    .math-2024-overlay {
+      position:fixed;
+      inset:0;
+      z-index:100000;
+      background:rgba(0,0,0,.86);
+      backdrop-filter:blur(8px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+    }
+
+    .math-2024-box {
+      width:min(900px,100%);
+      max-height:92vh;
+      overflow:auto;
+      background:#0d1118;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 25px 90px rgba(0,0,0,.65);
+      position:relative;
+    }
+
+    .math-2024-close {
+      position:absolute;
+      top:12px;
+      left:12px;
+      width:42px;
+      height:42px;
+      border:0;
+      border-radius:50%;
+      background:rgba(255,255,255,.1);
+      color:white;
+      font-size:28px;
+      cursor:pointer;
+    }
+
+    .math-2024-head {
+      display:flex;
+      align-items:center;
+      gap:15px;
+      padding:5px 50px 20px 5px;
+    }
+
+    .math-2024-icon {
+      font-size:42px;
+    }
+
+    .math-2024-head h2 {
+      margin:0 0 5px;
+    }
+
+    .math-2024-head p {
+      margin:0;
+      opacity:.65;
+    }
+
+    .math-2024-tabs {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:8px;
+      margin-bottom:18px;
+    }
+
+    .math-2024-tabs button {
+      padding:13px 7px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      color:white;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    .math-2024-tabs button.active {
+      background:rgba(0,180,255,.2);
+      border-color:rgba(0,200,255,.5);
+    }
+
+    .math-resource {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:16px;
+      margin:10px 0;
+      border-radius:15px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.045);
+      color:white;
+      text-decoration:none;
+      transition:.2s;
+    }
+
+    .math-resource:hover {
+      transform:translateY(-2px);
+      background:rgba(0,180,255,.1);
+      border-color:rgba(0,200,255,.4);
+    }
+
+    .math-resource-icon {
+      font-size:27px;
+      flex:none;
+    }
+
+    .math-resource strong {
+      display:block;
+      line-height:1.5;
+    }
+
+    .math-resource small {
+      display:block;
+      opacity:.6;
+      margin-top:4px;
+    }
+
+    .math-open {
+      margin-right:auto;
+      opacity:.7;
+      white-space:nowrap;
+    }
+
+    .math-empty {
+      text-align:center;
+      padding:30px;
+      border:1px dashed rgba(255,255,255,.2);
+      border-radius:15px;
+      color:#aaa;
+    }
+
+    @media(max-width:650px) {
+      .math-2024-tabs {
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .math-resource {
+        align-items:flex-start;
+      }
+
+      .math-open {
+        display:none;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+})();

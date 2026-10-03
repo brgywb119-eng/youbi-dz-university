@@ -1,0 +1,220 @@
+const mathData = {
+  "رياضيات": {
+    "التحليل": {
+      lessons: [],
+      summaries: [],
+      exercises: [],
+      videos: []
+    },
+
+    "الجبر": {
+      lessons: [],
+      summaries: [],
+      exercises: [],
+      videos: []
+    },
+
+    "الهندسة": {
+      lessons: [],
+      summaries: [],
+      exercises: [],
+      videos: []
+    },
+
+    "الإحصاء": {
+      lessons: [],
+      summaries: [],
+      exercises: [],
+      videos: []
+    },
+
+    "الفيزياء": {
+      lessons: [],
+      summaries: [],
+      exercises: [],
+      videos: []
+    },
+
+    "الخوارزميات": {
+      lessons: [
+        {
+          title: "📘 الدرس الكامل: مقدمة إلى الخوارزميات - جامعة الوادي",
+          url: "https://elearning.univ-eloued.dz/mod/resource/view.php?id=9846"
+        },
+        {
+          title: "📘 دروس الخوارزميات وبنية المعطيات 1 - جامعة تلمسان",
+          url: "https://elearn.univ-tlemcen.dz/course/view.php?id=4968"
+        },
+        {
+          title: "📘 Cours Algorithmique et structure de données 1",
+          url: "https://fs.univ-tlemcen.dz/ar/pages/356/l1-%D9%84%D9%8A%D8%B3%D8%A7%D9%86%D8%B3-%D9%85%D9%87%D9%86%D8%AF%D8%B3"
+        }
+      ],
+
+      summaries: [
+        {
+          title: "📝 ملخص ومقدمة الخوارزميات - جامعة الوادي",
+          url: "https://elearning.univ-eloued.dz/mod/resource/view.php?id=9846"
+        },
+        {
+          title: "📝 Initiation à l'algorithmique - جامعة تلمسان",
+          url: "https://elearn.univ-tlemcen.dz/course/view.php?id=3606&lang=en"
+        }
+      ],
+
+      exercises: [
+        {
+          title: "🧩 TD الخوارزميات 1 - جامعة تلمسان",
+          url: "https://dmath.univ-tlemcen.dz/fr/pages/202/1-re-ann-e-26-27"
+        },
+        {
+          title: "🧩 TD وTP الخوارزميات - جامعة تلمسان",
+          url: "https://dmath.univ-tlemcen.dz/fr/pages/191/1-re-ann-e-25-26"
+        },
+        {
+          title: "🧩 تمارين المتغيرات والتعليمات الأساسية",
+          url: "https://elearn.univ-tlemcen.dz/course/view.php?id=3606&lang=en"
+        }
+      ],
+
+      videos: [
+        {
+          title: "▶️ شرح الخوارزميات - السنة الأولى",
+          url: "https://www.youtube.com/results?search_query=شرح+الخوارزميات+السنة+الأولى+جامعة"
+        },
+        {
+          title: "▶️ Algorithmique L1",
+          url: "https://www.youtube.com/results?search_query=Algorithmique+L1"
+        }
+      ]
+    },
+
+    "اللغة الأجنبية": {
+      lessons: [],
+      summaries: [],
+      exercises: [],
+      videos: []
+    },
+
+    "منهجية العمل الجامعي": {
+      lessons: [],
+      summaries: [],
+      exercises: [],
+      videos: []
+    }
+  }
+};
+
+function openMath(card) {
+  const specialty = card.closest(".subjects-panel")
+    ?.querySelector("h3,h2,h4")?.textContent || "";
+
+  if (!specialty.includes("رياضيات")) return;
+
+  const subject = card.querySelector(".subject-name,.subject-title,h4,h3")
+    ?.textContent?.trim() || card.textContent.trim();
+
+  if (!mathData["رياضيات"][subject]) return;
+
+  const data = mathData["رياضيات"][subject];
+
+  const old = document.querySelector(".learning-overlay");
+  if (old) old.remove();
+
+  const overlay = document.createElement("div");
+  overlay.className = "learning-overlay";
+
+  overlay.innerHTML = `
+    <div class="learning-box">
+      <button class="learning-close">×</button>
+
+      <div class="learning-header">
+        <div class="learning-icon">📐</div>
+        <div>
+          <div class="learning-label">رياضيات — السنة الأولى</div>
+          <h2>${subject}</h2>
+        </div>
+      </div>
+
+      <div class="learning-tabs">
+        <button class="learning-tab active" data-tab="lessons">📖 الدروس</button>
+        <button class="learning-tab" data-tab="summaries">📝 الملخصات</button>
+        <button class="learning-tab" data-tab="exercises">🧩 التمارين</button>
+        <button class="learning-tab" data-tab="videos">▶️ الفيديوهات</button>
+      </div>
+
+      <div class="learning-section" data-section="lessons">
+        ${renderMathResources(data.lessons)}
+      </div>
+
+      <div class="learning-section" data-section="summaries" style="display:none">
+        ${renderMathResources(data.summaries)}
+      </div>
+
+      <div class="learning-section" data-section="exercises" style="display:none">
+        ${renderMathResources(data.exercises)}
+      </div>
+
+      <div class="learning-section" data-section="videos" style="display:none">
+        ${renderMathResources(data.videos)}
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  overlay.querySelector(".learning-close").onclick = () => overlay.remove();
+
+  overlay.addEventListener("click", e => {
+    if (e.target === overlay) overlay.remove();
+  });
+
+  overlay.querySelectorAll(".learning-tab").forEach(tab => {
+    tab.onclick = () => {
+      overlay.querySelectorAll(".learning-tab")
+        .forEach(x => x.classList.remove("active"));
+
+      overlay.querySelectorAll(".learning-section")
+        .forEach(x => x.style.display = "none");
+
+      tab.classList.add("active");
+
+      overlay.querySelector(
+        `[data-section="${tab.dataset.tab}"]`
+      ).style.display = "block";
+    };
+  });
+}
+
+function renderMathResources(items) {
+  if (!items || !items.length) {
+    return `<div class="empty-learning">لا يوجد محتوى مضاف حاليا.</div>`;
+  }
+
+  return items.map(item => `
+    <a
+      class="learning-card"
+      href="${item.url}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span>${item.title}</span>
+      <strong>فتح ↗</strong>
+    </a>
+  `).join("");
+}
+
+document.addEventListener("click", function(e) {
+  const card = e.target.closest(".subject-card");
+  if (!card) return;
+
+  const panel = card.closest(".subjects-panel");
+  if (!panel) return;
+
+  const title = panel.querySelector("h3,h2,h4")?.textContent || "";
+
+  if (title.includes("رياضيات")) {
+    e.stopImmediatePropagation();
+    openMath(card);
+  }
+}, true);

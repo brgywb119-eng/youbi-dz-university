@@ -1,0 +1,292 @@
+(function () {
+
+const mathData = {
+
+"رياضيات": {
+
+"التحليل": {
+lessons:[
+["📄 دروس التحليل 1","#"],
+["📄 المتتاليات","#"],
+["📄 الدوال والنهايات","#"],
+["📄 الاشتقاق والتكامل","#"]
+],
+summaries:[
+["📝 ملخص التحليل 1","#"],
+["📝 ملخص المتتاليات والدوال","#"]
+],
+exercises:[
+["🧩 تمارين المتتاليات","#"],
+["🧩 تمارين النهايات والدوال","#"],
+["🧩 تمارين الاشتقاق","#"],
+["🧩 تمارين التكامل","#"]
+],
+videos:[
+["▶️ التحليل 1 - المتتاليات","https://www.youtube.com/results?search_query=تحليل+1+سنة+أولى+رياضيات+الجزائر"],
+["▶️ النهايات والاشتقاق","https://www.youtube.com/results?search_query=تحليل+1+النهايات+الاشتقاق+سنة+أولى+جامعة"]
+]
+},
+
+"الجبر": {
+lessons:[
+["📄 دروس الجبر 1","#"],
+["📄 المجموعات","#"],
+["📄 المصفوفات","#"],
+["📄 الأنظمة الخطية","#"]
+],
+summaries:[
+["📝 ملخص الجبر 1","#"],
+["📝 ملخص المصفوفات","#"]
+],
+exercises:[
+["🧩 تمارين المجموعات","#"],
+["🧩 تمارين المصفوفات","#"],
+["🧩 تمارين الأنظمة الخطية","#"]
+],
+videos:[
+["▶️ الجبر 1 - سنة أولى رياضيات","https://www.youtube.com/results?search_query=جبر+1+سنة+أولى+رياضيات+الجزائر"],
+["▶️ المصفوفات والأنظمة الخطية","https://www.youtube.com/results?search_query=المصفوفات+الأنظمة+الخطية+سنة+أولى+جامعة"]
+]
+},
+
+"الهندسة": {
+lessons:[
+["📄 دروس الهندسة 1","#"],
+["📄 الهندسة التحليلية","#"],
+["📄 المتجهات والمستقيمات","#"]
+],
+summaries:[
+["📝 ملخص الهندسة","#"]
+],
+exercises:[
+["🧩 تمارين الهندسة التحليلية","#"],
+["🧩 تمارين المتجهات","#"]
+],
+videos:[
+["▶️ هندسة 1 - سنة أولى رياضيات","https://www.youtube.com/results?search_query=هندسة+1+سنة+أولى+رياضيات"]
+]
+},
+
+"الإحصاء": {
+lessons:[
+["📄 دروس الإحصاء 1","#"],
+["📄 الإحصاء الوصفي","#"],
+["📄 مقاييس النزعة المركزية","#"],
+["📄 التشتت والتمثيل البياني","#"]
+],
+summaries:[
+["📝 ملخص الإحصاء 1","#"],
+["📝 ملخص مقاييس الإحصاء","#"]
+],
+exercises:[
+["🧩 تمارين الإحصاء","#"],
+["🧩 تمارين المتوسط والوسيط والمنوال","#"]
+],
+videos:[
+["▶️ الإحصاء 1 - سنة أولى جامعة","https://www.youtube.com/results?search_query=إحصاء+1+سنة+أولى+رياضيات+الجزائر"]
+]
+},
+
+"الفيزياء": {
+lessons:[
+["📄 دروس الفيزياء 1","#"],
+["📄 الميكانيك","#"],
+["📄 الحركة والقوة","#"],
+["📄 الطاقة والعمل","#"]
+],
+summaries:[
+["📝 ملخص الفيزياء 1","#"],
+["📝 ملخص الميكانيك","#"]
+],
+exercises:[
+["🧩 تمارين الميكانيك","#"],
+["🧩 تمارين الطاقة والعمل","#"]
+],
+videos:[
+["▶️ فيزياء 1 - سنة أولى جامعة","https://www.youtube.com/results?search_query=فيزياء+1+سنة+أولى+جامعة+الجزائر"]
+]
+},
+
+"الإعلام الآلي": {
+lessons:[
+["📄 الخوارزميات","#"],
+["📄 البرمجة","#"],
+["📄 المتغيرات والشروط","#"],
+["📄 الحلقات","#"]
+],
+summaries:[
+["📝 ملخص الخوارزميات","#"],
+["📝 ملخص البرمجة","#"]
+],
+exercises:[
+["🧩 تمارين الخوارزميات","#"],
+["🧩 تمارين البرمجة","#"]
+],
+videos:[
+["▶️ خوارزميات سنة أولى","https://www.youtube.com/results?search_query=خوارزميات+سنة+أولى+رياضيات+الجزائر"],
+["▶️ برمجة سنة أولى جامعة","https://www.youtube.com/results?search_query=برمجة+سنة+أولى+جامعة+الجزائر"]
+]
+},
+
+"اللغة الأجنبية": {
+lessons:[
+["📄 English for Mathematics","#"]
+],
+summaries:[
+["📝 ملخص اللغة الأجنبية","#"]
+],
+exercises:[
+["🧩 تمارين English","#"]
+],
+videos:[
+["▶️ English for Mathematics","https://www.youtube.com/results?search_query=English+for+mathematics+students"]
+]
+},
+
+"منهجية العمل الجامعي": {
+lessons:[
+["📄 منهجية العمل الجامعي","#"],
+["📄 البحث العلمي","#"],
+["📄 كيفية إعداد بحث جامعي","#"]
+],
+summaries:[
+["📝 ملخص المنهجية","#"]
+],
+exercises:[
+["🧩 تطبيقات في المنهجية","#"]
+],
+videos:[
+["▶️ منهجية العمل الجامعي","https://www.youtube.com/results?search_query=منهجية+العمل+الجامعي+سنة+أولى"]
+]
+}
+
+}
+
+};
+
+function openMath(card){
+
+const panel=card.closest(".subjects-panel");
+if(!panel)return;
+
+const title=panel.querySelector("h3");
+if(!title)return;
+
+const specialty=title.textContent.replace("🎓","").trim();
+
+if(specialty!=="رياضيات")return;
+
+const subject=card.textContent.replace("📚","").trim();
+const info=mathData["رياضيات"][subject];
+
+if(!info)return;
+
+document.querySelector(".learning-overlay")?.remove();
+
+const overlay=document.createElement("div");
+overlay.className="learning-overlay";
+
+function cards(items){
+return items.map(function(item){
+return `
+<a class="learning-card" href="${item[1]}" target="_blank" rel="noopener">
+<span>${item[0]}</span>
+<span class="open-resource">فتح ↗</span>
+</a>`;
+}).join("");
+}
+
+overlay.innerHTML=`
+<div class="learning-box">
+
+<button class="learning-close">×</button>
+
+<div class="learning-header">
+
+<div class="learning-icon">∑</div>
+
+<div>
+<div class="learning-label">رياضيات</div>
+<h2>${subject}</h2>
+<small>السنة الأولى ليسانس</small>
+</div>
+
+</div>
+
+<div class="learning-tabs">
+
+<button class="learning-tab active" data-tab="lessons">📖 الدروس</button>
+<button class="learning-tab" data-tab="summaries">📝 الملخصات</button>
+<button class="learning-tab" data-tab="exercises">🧩 التمارين</button>
+<button class="learning-tab" data-tab="videos">▶️ فيديوهات</button>
+
+</div>
+
+<div class="learning-content">
+
+<section class="learning-section active" data-section="lessons">
+${cards(info.lessons)}
+</section>
+
+<section class="learning-section" data-section="summaries">
+${cards(info.summaries)}
+</section>
+
+<section class="learning-section" data-section="exercises">
+${cards(info.exercises)}
+</section>
+
+<section class="learning-section" data-section="videos">
+${cards(info.videos)}
+</section>
+
+</div>
+
+</div>
+`;
+
+document.body.appendChild(overlay);
+
+overlay.querySelector(".learning-close").onclick=()=>{
+overlay.remove();
+};
+
+overlay.addEventListener("click",function(e){
+if(e.target===overlay)overlay.remove();
+});
+
+overlay.querySelectorAll(".learning-tab").forEach(function(tab){
+
+tab.onclick=function(){
+
+overlay.querySelectorAll(".learning-tab")
+.forEach(x=>x.classList.remove("active"));
+
+overlay.querySelectorAll(".learning-section")
+.forEach(x=>x.classList.remove("active"));
+
+tab.classList.add("active");
+
+const section=overlay.querySelector(
+'[data-section="'+tab.dataset.tab+'"]'
+);
+
+if(section)section.classList.add("active");
+
+};
+
+});
+
+}
+
+document.addEventListener("click",function(e){
+
+const card=e.target.closest(".subject-card");
+
+if(card)openMath(card);
+
+});
+
+console.log("✅ نظام رياضيات جاهز");
+
+})();

@@ -1,0 +1,275 @@
+(function () {
+
+const mathData = {
+
+"رياضيات": {
+
+"التحليل": {
+lessons:[
+["📄 مطبوعة التحليل 1 - 2024 - جامعة أم البواقي","https://www.univ-oeb.dz/fsesnv/%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-1-%D8%AF-%D9%86%D8%B3%D9%8A%D8%A8-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D9%85/"],
+["📚 Analyse 1 - Cours - 2023/2024 - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+summaries:[
+["📝 التحليل 1 - مطبوعة 2024","https://www.univ-oeb.dz/fsesnv/%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A9-%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-1-%D8%AF-%D9%86%D8%B3%D9%8A%D8%A8-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D9%85/"]
+],
+exercises:[
+["🧩 Analyse 1 - TD وتمارين وتصحيحات - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+videos:[
+["▶️ تحليل 1 - سنة أولى رياضيات - بحث يوتيوب","https://www.youtube.com/results?search_query=تحليل+1+سنة+أولى+رياضيات+الجزائر"]
+]
+},
+
+"الجبر": {
+lessons:[
+["📄 Algèbre 1 - Cours - 2023/2024 - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+summaries:[
+["📝 موارد Algèbre 1 - السنة الأولى - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+exercises:[
+["🧩 Algèbre 1 - TD - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"],
+["🧩 Algèbre 1 - Corrigés - جامعة تلمسان","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+videos:[
+["▶️ الجبر 1 - سنة أولى رياضيات - بحث يوتيوب","https://www.youtube.com/results?search_query=Algèbre+1+سنة+أولى+رياضيات+الجزائر"]
+]
+},
+
+"الهندسة": {
+lessons:[
+["📄 الهندسة - السنة الأولى رياضيات - موارد جامعية 2024","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+summaries:[
+["📝 ملخصات الهندسة - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+exercises:[
+["🧩 تمارين الهندسة - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+videos:[
+["▶️ الهندسة - سنة أولى رياضيات الجزائر","https://www.youtube.com/results?search_query=هندسة+سنة+أولى+رياضيات+الجزائر"]
+]
+},
+
+"الإحصاء": {
+lessons:[
+["📄 الإحصاء 1 - السنة الأولى رياضيات - موارد جامعية 2024","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+summaries:[
+["📝 ملخصات الإحصاء 1 - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+exercises:[
+["🧩 تمارين الإحصاء 1 - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+videos:[
+["▶️ الإحصاء 1 - سنة أولى رياضيات الجزائر","https://www.youtube.com/results?search_query=إحصاء+1+سنة+أولى+رياضيات+الجزائر"]
+]
+},
+
+"الفيزياء": {
+lessons:[
+["📄 الفيزياء - السنة الأولى رياضيات - موارد جامعية 2024","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+summaries:[
+["📝 ملخصات الفيزياء - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+exercises:[
+["🧩 تمارين الفيزياء - السنة الأولى","https://dmath.univ-tlemcen.dz/fr/pages/168/1-re-ann-e-23-24"]
+],
+videos:[
+["▶️ فيزياء سنة أولى رياضيات - الجزائر","https://www.youtube.com/results?search_query=فيزياء+سنة+أولى+رياضيات+الجزائر"]
+]
+},
+
+"الخوارزميات": {
+lessons:[
+["📘 الدرس 1: مقدمة في الخوارزميات","#"],
+["📘 الدرس 2: المتغيرات وأنواع البيانات","#"],
+["📘 الدرس 3: العمليات الحسابية والمنطقية","#"],
+["📘 الدرس 4: التعليمات الشرطية If / Else","#"],
+["📘 الدرس 5: الحلقات التكرارية For / While","#"],
+["📘 الدرس 6: الجداول والمصفوفات","#"],
+["📘 الدرس 7: الدوال والإجراءات","#"],
+["📘 الدرس 8: الخوارزميات والبرمجة بلغة C","#"]
+],
+summaries:[
+["📝 ملخص أساسيات الخوارزميات","#"],
+["📝 ملخص الشروط والحلقات","#"],
+["📝 ملخص الجداول والدوال","#"]
+],
+exercises:[
+["🧩 تمارين المتغيرات والعمليات","#"],
+["🧩 تمارين الشروط","#"],
+["🧩 تمارين الحلقات","#"],
+["🧩 تمارين الجداول والمصفوفات","#"],
+["🧩 تمارين الخوارزميات مع الحل","#"]
+],
+videos:[
+["▶️ الخوارزميات للمبتدئين - سنة أولى جامعة","https://www.youtube.com/results?search_query=خوارزميات+سنة+أولى+جامعة+الجزائر"],
+["▶️ Algorithmique - Algérie","https://www.youtube.com/results?search_query=Algorithmique+1ère+année+université+Algérie"],
+["▶️ الخوارزميات: الشروط والحلقات","https://www.youtube.com/results?search_query=خوارزميات+الشروط+الحلقات"]
+]
+},
+
+"اللغة الأجنبية": {
+lessons:[
+["📄 English for Mathematics","#"]
+],
+summaries:[
+["📝 ملخص اللغة الأجنبية","#"]
+],
+exercises:[
+["🧩 تمارين English","#"]
+],
+videos:[
+["▶️ English for Mathematics","https://www.youtube.com/results?search_query=English+for+mathematics+students"]
+]
+},
+
+"منهجية العمل الجامعي": {
+lessons:[
+["📄 منهجية العمل الجامعي","#"],
+["📄 البحث العلمي","#"],
+["📄 كيفية إعداد بحث جامعي","#"]
+],
+summaries:[
+["📝 ملخص المنهجية","#"]
+],
+exercises:[
+["🧩 تطبيقات في المنهجية","#"]
+],
+videos:[
+["▶️ منهجية العمل الجامعي","https://www.youtube.com/results?search_query=منهجية+العمل+الجامعي+سنة+أولى"]
+]
+}
+
+}
+
+};
+
+function openMath(card){
+
+const panel=card.closest(".subjects-panel");
+if(!panel)return;
+
+const title=panel.querySelector("h3");
+if(!title)return;
+
+const specialty=title.textContent.replace("🎓","").trim();
+
+if(specialty!=="رياضيات")return;
+
+const subject=card.textContent.replace("📚","").trim();
+const info=mathData["رياضيات"][subject];
+
+if(!info)return;
+
+document.querySelector(".learning-overlay")?.remove();
+
+const overlay=document.createElement("div");
+overlay.className="learning-overlay";
+
+function cards(items){
+return items.map(function(item){
+return `
+<a class="learning-card" href="${item[1]}" target="_blank" rel="noopener">
+<span>${item[0]}</span>
+<span class="open-resource">فتح ↗</span>
+</a>`;
+}).join("");
+}
+
+overlay.innerHTML=`
+<div class="learning-box">
+
+<button class="learning-close">×</button>
+
+<div class="learning-header">
+
+<div class="learning-icon">∑</div>
+
+<div>
+<div class="learning-label">رياضيات</div>
+<h2>${subject}</h2>
+<small>السنة الأولى ليسانس</small>
+</div>
+
+</div>
+
+<div class="learning-tabs">
+
+<button class="learning-tab active" data-tab="lessons">📖 الدروس</button>
+<button class="learning-tab" data-tab="summaries">📝 الملخصات</button>
+<button class="learning-tab" data-tab="exercises">🧩 التمارين</button>
+<button class="learning-tab" data-tab="videos">▶️ فيديوهات</button>
+
+</div>
+
+<div class="learning-content">
+
+<section class="learning-section active" data-section="lessons">
+${cards(info.lessons)}
+</section>
+
+<section class="learning-section" data-section="summaries">
+${cards(info.summaries)}
+</section>
+
+<section class="learning-section" data-section="exercises">
+${cards(info.exercises)}
+</section>
+
+<section class="learning-section" data-section="videos">
+${cards(info.videos)}
+</section>
+
+</div>
+
+</div>
+`;
+
+document.body.appendChild(overlay);
+
+overlay.querySelector(".learning-close").onclick=()=>{
+overlay.remove();
+};
+
+overlay.addEventListener("click",function(e){
+if(e.target===overlay)overlay.remove();
+});
+
+overlay.querySelectorAll(".learning-tab").forEach(function(tab){
+
+tab.onclick=function(){
+
+overlay.querySelectorAll(".learning-tab")
+.forEach(x=>x.classList.remove("active"));
+
+overlay.querySelectorAll(".learning-section")
+.forEach(x=>x.classList.remove("active"));
+
+tab.classList.add("active");
+
+const section=overlay.querySelector(
+'[data-section="'+tab.dataset.tab+'"]'
+);
+
+if(section)section.classList.add("active");
+
+};
+
+});
+
+}
+
+document.addEventListener("click",function(e){
+
+const card=e.target.closest(".subject-card");
+
+if(card)openMath(card);
+
+});
+
+console.log("✅ نظام رياضيات جاهز");
+
+})();

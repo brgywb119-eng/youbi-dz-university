@@ -1,0 +1,481 @@
+(function () {
+  "use strict";
+
+  const PDF = "📄 PDF";
+
+  const mathData = {
+
+    "التحليل": {
+      lessons: [
+        [
+          "Analyse 1 — Chapitre 1: Le Corps des Réels",
+          "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/2025-2026/Licence/1er_annee/Sem1/Cours%26TD/Analyse1/chapitre1.pdf"
+        ],
+        [
+          "Analyse 1 — Fiches de cours جامعة تلمسان",
+          "https://dmath.univ-tlemcen.dz/fr/pages/202/1-re-ann-e-26-27"
+        ]
+      ],
+
+      summaries: [
+        [
+          "Analyse 1 — ملخص ومراجعة",
+          "https://dmath.univ-tlemcen.dz/fr/pages/180/1-re-ann-e-24-25"
+        ]
+      ],
+
+      exercises: [
+        [
+          "Analyse 1 — TD 5: Fonctions dérivables",
+          "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/2019-2020/Licence/1er_annee/Sem1/TD/Analyse1/Fiche-TD5_Analyse1_L1_MI_19-20.pdf"
+        ],
+        [
+          "Analyse 1 — Sujet + corrigé",
+          "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/2022-2023/Licence/1er_annee_MI/Sem1/Ratt/Sujets_Corrig%C3%A9s/Sujet_corrig%C3%A9_Ratt_Analyse1_L1-MI_22-23.pdf"
+        ]
+      ],
+
+      videos: [
+        [
+          "فيديوهات Analyse 1",
+          "https://www.youtube.com/results?search_query=Analyse+1+L1+Maths+Algérie"
+        ]
+      ]
+    },
+
+    "الجبر": {
+      lessons: [
+        [
+          "Algèbre 1 — Cours جامعة تلمسان",
+          "https://dmath.univ-tlemcen.dz/fr/pages/180/1-re-ann-e-24-25"
+        ],
+        [
+          "Algèbre 1 — برنامج المادة",
+          "https://dmath.univ-tlemcen.dz/fr/pages/202/1-re-ann-e-26-27"
+        ]
+      ],
+
+      summaries: [
+        [
+          "Algèbre 1 — وثائق السنة الأولى",
+          "https://dmath.univ-tlemcen.dz/fr/pages/190/l1-info-1er-ing-24-25"
+        ]
+      ],
+
+      exercises: [
+        [
+          "Algèbre 1 — TD السنة الأولى",
+          "https://dmath.univ-tlemcen.dz/fr/pages/180/1-re-ann-e-24-25"
+        ],
+        [
+          "Algèbre 1 — Sujet + corrigé PDF",
+          "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/2024-2025/Licence/1er_annee/Sem1/EF/Sujets_Corrig%C3%A9s/Sujet_Corrige_EF_Alg%C3%A8bre1_Endettes_24-25.pdf"
+        ]
+      ],
+
+      videos: [
+        [
+          "فيديوهات Algèbre 1",
+          "https://www.youtube.com/results?search_query=Algèbre+1+L1+Maths+Algérie"
+        ]
+      ]
+    },
+
+    "الهندسة": {
+      lessons: [
+        [
+          "هندسة — مصادر السنة الأولى رياضيات",
+          "https://dmath.univ-tlemcen.dz/fr/pages/202/1-re-ann-e-26-27"
+        ]
+      ],
+      summaries: [
+        [
+          "مراجعة الرياضيات — السنة الأولى",
+          "https://dmath.univ-tlemcen.dz/fr/pages/191/1-re-ann-e-25-26"
+        ]
+      ],
+      exercises: [
+        [
+          "تمارين السنة الأولى رياضيات",
+          "https://dmath.univ-tlemcen.dz/fr/pages/180/1-re-ann-e-24-25"
+        ]
+      ],
+      videos: [
+        [
+          "فيديوهات الهندسة",
+          "https://www.youtube.com/results?search_query=geometrie+L1+maths+Algerie"
+        ]
+      ]
+    },
+
+    "الإحصاء": {
+      lessons: [
+        [
+          "Introduction aux probabilités et statistique descriptive",
+          "https://dmath.univ-tlemcen.dz/fr/pages/202/1-re-ann-e-26-27"
+        ]
+      ],
+      summaries: [
+        [
+          "إحصاء واحتمالات — السنة الأولى",
+          "https://dmath.univ-tlemcen.dz/fr/pages/191/1-re-ann-e-25-26"
+        ]
+      ],
+      exercises: [
+        [
+          "تمارين الإحصاء — السنة الأولى",
+          "https://dmath.univ-tlemcen.dz/fr/pages/180/1-re-ann-e-24-25"
+        ]
+      ],
+      videos: [
+        [
+          "فيديوهات الإحصاء والاحتمالات",
+          "https://www.youtube.com/results?search_query=probabilites+statistiques+L1+Algerie"
+        ]
+      ]
+    },
+
+    "الفيزياء": {
+      lessons: [
+        [
+          "Physique 1 — Mécanique du point",
+          "https://dmath.univ-tlemcen.dz/fr/pages/202/1-re-ann-e-26-27"
+        ]
+      ],
+      summaries: [
+        [
+          "ملخصات الفيزياء — السنة الأولى",
+          "https://dmath.univ-tlemcen.dz/fr/pages/191/1-re-ann-e-25-26"
+        ]
+      ],
+      exercises: [
+        [
+          "TD Mécanique — السنة الأولى",
+          "https://dmath.univ-tlemcen.dz/fr/pages/180/1-re-ann-e-24-25"
+        ]
+      ],
+      videos: [
+        [
+          "فيديوهات Mécanique",
+          "https://www.youtube.com/results?search_query=mecanique+L1+Algerie+universite"
+        ]
+      ]
+    },
+
+    "الخوارزميات": {
+      lessons: [
+        [
+          "Algorithmique et structure de données 1 — البرنامج الرسمي PDF",
+          "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/Docs/Textes/Canevas2025/CANEVAS%20Licence%20Math%C3%A9matiques.pdf"
+        ],
+        [
+          "Algorithmique 1 — مصادر جامعة تلمسان",
+          "https://dmath.univ-tlemcen.dz/fr/pages/202/1-re-ann-e-26-27"
+        ]
+      ],
+
+      summaries: [
+        [
+          "Algorithmique — Chapitres وبرنامج المادة",
+          "https://dmath.univ-tlemcen.dz/assets/uploads/Documents/Docs/Textes/Canevas2025/CANEVAS%20Licence%20Math%C3%A9matiques.pdf"
+        ]
+      ],
+
+      exercises: [
+        [
+          "Algorithmique 1 — TD1 إلى TD8",
+          "https://dmath.univ-tlemcen.dz/fr/pages/180/1-re-ann-e-24-25"
+        ],
+        [
+          "Algorithmique 1 — TD وTP",
+          "https://dmath.univ-tlemcen.dz/fr/pages/190/l1-info-1er-ing-24-25"
+        ]
+      ],
+
+      videos: [
+        [
+          "فيديوهات Algorithmique 1",
+          "https://www.youtube.com/results?search_query=Algorithmique+1+L1+Algerie"
+        ]
+      ]
+    },
+
+    "اللغة الأجنبية": {
+      lessons: [
+        [
+          "English — السنة الأولى",
+          "https://dmath.univ-tlemcen.dz/fr/pages/202/1-re-ann-e-26-27"
+        ]
+      ],
+      summaries: [],
+      exercises: [
+        [
+          "تمارين English — السنة الأولى",
+          "https://dmath.univ-tlemcen.dz/fr/pages/180/1-re-ann-e-24-25"
+        ]
+      ],
+      videos: [
+        [
+          "English for University Students",
+          "https://www.youtube.com/results?search_query=English+for+university+students+Algeria"
+        ]
+      ]
+    },
+
+    "منهجية العمل الجامعي": {
+      lessons: [
+        [
+          "منهجية العمل الجامعي — السنة الأولى",
+          "https://dmath.univ-tlemcen.dz/fr/pages/202/1-re-ann-e-26-27"
+        ]
+      ],
+      summaries: [],
+      exercises: [],
+      videos: [
+        [
+          "منهجية العمل الجامعي",
+          "https://www.youtube.com/results?search_query=methodologie+travail+universitaire+Algerie"
+        ]
+      ]
+    }
+  };
+
+  function esc(text) {
+    return String(text || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function subjectData(name) {
+    return mathData[name] || null;
+  }
+
+  function makeItems(items) {
+    if (!items || !items.length) {
+      return `
+        <div style="
+          padding:22px;
+          text-align:center;
+          border:1px dashed rgba(255,255,255,.2);
+          border-radius:14px;
+          color:#aaa;
+        ">
+          لا توجد ملفات مضافة حاليا.
+        </div>
+      `;
+    }
+
+    return items.map(function (item) {
+      return `
+        <a href="${esc(item[1])}"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="
+             display:flex;
+             align-items:center;
+             gap:12px;
+             padding:16px;
+             margin:10px 0;
+             border:1px solid rgba(255,255,255,.12);
+             border-radius:14px;
+             background:rgba(255,255,255,.04);
+             color:inherit;
+             text-decoration:none;
+           ">
+          <span style="font-size:25px;">${PDF}</span>
+          <span>
+            <strong style="display:block;">${esc(item[0])}</strong>
+            <small style="opacity:.7;">فتح الملف / المصدر</small>
+          </span>
+        </a>
+      `;
+    }).join("");
+  }
+
+  function openMathSubject(subject) {
+    const data = subjectData(subject);
+    if (!data) return;
+
+    const old = document.querySelector(".math-pdf-overlay");
+    if (old) old.remove();
+
+    const overlay = document.createElement("div");
+    overlay.className = "math-pdf-overlay";
+
+    overlay.innerHTML = `
+      <div class="math-pdf-box">
+
+        <button class="math-pdf-close" aria-label="إغلاق">×</button>
+
+        <div class="math-pdf-title">
+          <div style="font-size:42px;">📐</div>
+          <div>
+            <h2>${esc(subject)}</h2>
+            <p>رياضيات — السنة الأولى</p>
+          </div>
+        </div>
+
+        <div class="math-pdf-tabs">
+          <button data-tab="lessons" class="active">📖 الدروس PDF</button>
+          <button data-tab="summaries">📝 الملخصات PDF</button>
+          <button data-tab="exercises">🧩 التمارين PDF</button>
+          <button data-tab="videos">▶️ الفيديوهات</button>
+        </div>
+
+        <div class="math-pdf-content"></div>
+
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const content = overlay.querySelector(".math-pdf-content");
+    const buttons = overlay.querySelectorAll("[data-tab]");
+
+    function render(tab) {
+      buttons.forEach(function (btn) {
+        btn.classList.toggle("active", btn.dataset.tab === tab);
+      });
+
+      content.innerHTML = makeItems(data[tab]);
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        render(btn.dataset.tab);
+      });
+    });
+
+    overlay.querySelector(".math-pdf-close").onclick = function () {
+      overlay.remove();
+    };
+
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) overlay.remove();
+    });
+
+    render("lessons");
+  }
+
+  document.addEventListener("click", function (e) {
+    const card = e.target.closest(".subject-card");
+    if (!card) return;
+
+    const panel = card.closest(".subjects-panel");
+    if (!panel) return;
+
+    const panelText = panel.innerText || "";
+    if (!panelText.includes("رياضيات")) return;
+
+    const title = card.querySelector("h4, h3, strong, .subject-name");
+    const subjectName = title
+      ? title.textContent.trim()
+      : card.textContent.trim().split("\n")[0].trim();
+
+    if (!subjectData(subjectName)) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    openMathSubject(subjectName);
+  }, true);
+
+  const style = document.createElement("style");
+
+  style.textContent = `
+    .math-pdf-overlay {
+      position:fixed;
+      inset:0;
+      z-index:99999;
+      background:rgba(0,0,0,.82);
+      backdrop-filter:blur(8px);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:18px;
+      box-sizing:border-box;
+    }
+
+    .math-pdf-box {
+      width:min(900px, 100%);
+      max-height:92vh;
+      overflow:auto;
+      border-radius:24px;
+      padding:22px;
+      background:#10131a;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.15);
+      box-shadow:0 20px 80px rgba(0,0,0,.6);
+      position:relative;
+    }
+
+    .math-pdf-close {
+      position:absolute;
+      top:12px;
+      left:14px;
+      width:42px;
+      height:42px;
+      border:0;
+      border-radius:50%;
+      background:rgba(255,255,255,.1);
+      color:#fff;
+      font-size:28px;
+      cursor:pointer;
+    }
+
+    .math-pdf-title {
+      display:flex;
+      gap:15px;
+      align-items:center;
+      padding:8px 50px 20px 5px;
+    }
+
+    .math-pdf-title h2 {
+      margin:0 0 6px;
+      font-size:25px;
+    }
+
+    .math-pdf-title p {
+      margin:0;
+      opacity:.65;
+    }
+
+    .math-pdf-tabs {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:8px;
+      margin-bottom:18px;
+    }
+
+    .math-pdf-tabs button {
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      color:#fff;
+      padding:12px 8px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    .math-pdf-tabs button.active {
+      background:rgba(0,180,255,.18);
+      border-color:rgba(0,200,255,.5);
+    }
+
+    @media(max-width:650px) {
+      .math-pdf-tabs {
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .math-pdf-box {
+        padding:15px;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+
+})();

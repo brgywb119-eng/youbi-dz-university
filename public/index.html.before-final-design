@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Youbi DZ University</title>
+
+<style>
+:root{
+  --bg:#071522;
+  --card:rgba(255,255,255,.08);
+  --text:#fff;
+  --muted:#b8c5d2;
+  --green:#28d982;
+  --border:rgba(255,255,255,.14);
+}
+
+body.light{
+  --bg:#f2f6f8;
+  --card:rgba(255,255,255,.9);
+  --text:#12202d;
+  --muted:#657482;
+  --green:#079957;
+  --border:rgba(0,0,0,.1);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,Tahoma,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  color:var(--text);
+  background:
+    linear-gradient(rgba(3,15,28,.76),rgba(2,10,22,.96)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=2000&q=90")
+    center/cover fixed;
+  transition:.3s;
+}
+
+body.light{
+  background:
+    linear-gradient(rgba(245,248,250,.9),rgba(245,248,250,.97)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=2000&q=90")
+    center/cover fixed;
+}
+
+/* NAV */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  height:70px;
+  padding:0 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(3,15,28,.82);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
+
+body.light nav{
+  background:rgba(255,255,255,.85);
+}
+
+.logo{
+  font-size:21px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:var(--green);
+}
+
+.theme{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  font-size:20px;
+  cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+  min-height:570px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:70px 20px;
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.badge{
+  display:inline-block;
+  padding:9px 18px;
+  border:1px solid var(--green);
+  border-radius:30px;
+  color:var(--green);
+  margin-bottom:25px;
+}
+
+h1{
+  font-size:clamp(44px,10vw,82px);
+  line-height:1;
+  margin-bottom:24px;
+}
+
+h1 span{
+  color:var(--green);
+}
+
+.subtitle{
+  color:var(--muted);
+  font-size:19px;
+  line-height:1.9;
+}
+
+.buttons{
+  margin-top:32px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+
+.buttons a{
+  text-decoration:none;
+  padding:14px 27px;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+.primary{
+  background:var(--green);
+  color:#052117;
+}
+
+.secondary{
+  color:var(--text);
+  background:var(--card);
+  border:1px solid var(--border);
+}
+
+/* COMMON */
+
+section{
+  padding:65px 6%;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.title h2{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.title p{
+  color:var(--muted);
+}
+
+/* FIELDS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SCHEDULE */
+
+.schedule{
+  background:rgba(0,0,0,.12);
+}
+
+.table-container{
+  max-width:1100px;
+  margin:auto;
+  overflow-x:auto;
+  border-radius:18px;
+  border:1px solid var(--border);
+}
+
+table{
+  width:100%;
+  min-width:850px;
+  border-collapse:collapse;
+  background:var(--card);
+}
+
+th,td{
+  border:1px solid var(--border);
+  padding:14px;
+  text-align:center;
+  height:55px;
+}
+
+th{
+  background:var(--green);
+  color:#052117;
+}
+
+.time{
+  color:var(--green);
+  font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:25px;
+  background:var(--bg);
+  color:var(--muted);
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  nav{
+    padding:0 5%;
+  }
+
+  .logo{
+    font-size:17px;
+  }
+
+  .buttons{
+    flex-direction:column;
+  }
+
+  
+
+  section{
+    padding:55px 5%;
+  }
+}
+</style>
+
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:700px){
+  
+
+  
+}
+</style>
+
+
+<style>
+
+/* =====================================
+   Youbi DZ University - Neon Fields
+   ===================================== */
+
+.neon-fields{
+  width:100%;
+  max-width:1100px;
+  margin:35px auto;
+  padding:30px 20px 45px;
+  box-sizing:border-box;
+}
+
+.neon-fields-title{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.neon-fields-title .graduation-icon{
+  font-size:38px;
+  margin-bottom:8px;
+}
+
+.neon-fields-title span{
+  color:#35e5bd;
+  font-size:14px;
+  font-weight:800;
+}
+
+.neon-fields-title h2{
+  margin:7px 0;
+  color:#ffffff;
+  font-size:30px;
+  font-weight:900;
+}
+
+.neon-fields-title p{
+  margin:0;
+  color:#9fb1c9;
+  font-size:14px;
+}
+
+
+/* شبكة البطاقات */
+
+.neon-fields-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+
+/* البطاقة */
+
+.neon-field{
+  position:relative;
+  padding:24px;
+  border-radius:22px;
+  background:rgba(4,25,50,.88);
+  overflow:hidden;
+  backdrop-filter:blur(12px);
+  box-shadow:0 15px 40px rgba(0,0,0,.30);
+  transition:.3s ease;
+}
+
+.neon-field:hover{
+  transform:translateY(-4px);
+}
+
+
+/* ألوان المجالات */
+
+.law-field{
+  border:1px solid #ef3768;
+  box-shadow:
+    0 0 25px rgba(239,55,104,.12),
+    inset 0 0 25px rgba(239,55,104,.05);
+}
+
+.math-field{
+  border:1px solid #00aaff;
+  box-shadow:
+    0 0 25px rgba(0,170,255,.12),
+    inset 0 0 25px rgba(0,170,255,.05);
+}
+
+.biology-field{
+  border:1px solid #28e98a;
+  box-shadow:
+    0 0 25px rgba(40,233,138,.12),
+    inset 0 0 25px rgba(40,233,138,.05);
+}
+
+.technology-field{
+  border:1px solid #00aaff;
+  box-shadow:
+    0 0 25px rgba(0,170,255,.12),
+    inset 0 0 25px rgba(0,170,255,.05);
+}
+
+
+/* رأس البطاقة */
+
+.neon-field-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  direction:rtl;
+  margin-bottom:18px;
+}
+
+
+
+.neon-field-head h3{
+  margin:8px 0 0;
+  color:#fff;
+  font-size:23px;
+  font-weight:900;
+}
+
+.neon-field-icon{
+  width:68px;
+  height:68px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  flex-shrink:0;
+  background:rgba(255,255,255,.08);
+}
+
+.law-field .neon-field-icon{
+  border:1px solid #ef3768;
+  box-shadow:0 0 25px rgba(239,55,104,.35);
+}
+
+.math-field .neon-field-icon,
+.technology-field .neon-field-icon{
+  border:1px solid #00aaff;
+  box-shadow:0 0 25px rgba(0,170,255,.35);
+}
+
+.biology-field .neon-field-icon{
+  border:1px solid #28e98a;
+  box-shadow:0 0 25px rgba(40,233,138,.35);
+}
+
+
+/* قائمة التخصصات */
+
+.neon-specialties{
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;
+  padding:8px;
+  background:rgba(0,0,0,.13);
+}
+
+.neon-specialty{
+  width:100%;
+  border:0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:transparent;
+  color:#dce8f7;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:11px 9px;
+  font-family:inherit;
+  text-align:right;
+  cursor:pointer;
+}
+
+.neon-specialty:last-child{
+  border-bottom:0;
+}
+
+.neon-specialty span{
+  width:31px;
+  height:31px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.10);
+  font-size:15px;
+}
+
+.neon-specialty b{
+  flex:1;
+  font-size:15px;
+  font-weight:700;
+}
+
+.neon-specialty small{
+  opacity:.65;
+  font-size:11px;
+}
+
+.neon-specialty:hover{
+  background:rgba(255,255,255,.06);
+}
+
+
+/* زر جميع التخصصات */
+
+.show-specialties{
+  width:100%;
+  margin-top:17px;
+  padding:7px 0;
+  border:0;
+  background:transparent;
+  color:#39e5c1;
+  font-family:inherit;
+  font-size:15px;
+  font-weight:900;
+  cursor:pointer;
+  text-align:right;
+}
+
+.law-field .show-specialties{
+  color:#ff4c7b;
+}
+
+.show-specialties strong{
+  font-size:25px;
+  vertical-align:-2px;
+  margin-right:7px;
+}
+
+
+/* الهاتف */
+
+@media(max-width:700px){
+
+  .neon-fields{
+    padding:25px 12px 35px;
+  }
+
+  .neon-fields-grid{
+    grid-template-columns:1fr;
+    gap:17px;
+  }
+
+  .neon-fields-title h2{
+    font-size:25px;
+  }
+
+  .neon-field{
+    padding:18px;
+    border-radius:19px;
+  }
+
+  .neon-field-head h3{
+    font-size:20px;
+  }
+
+  .neon-field-icon{
+    width:58px;
+    height:58px;
+    font-size:27px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+  <div class="logo">
+    🎓 Youbi <span>DZ University</span>
+  </div>
+
+  <button class="theme" onclick="toggleTheme()" id="theme">
+    🌙
+  </button>
+
+</nav>
+
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      🇩🇿 منصة Youbi DZ University ترحب بيكم
+    </div>
+
+    <h1>
+      Youbi <span>DZ</span><br>
+      University
+    </h1>
+
+    <p class="subtitle">
+      منصتك التعليمية للدراسة وتنظيم وقتك والوصول
+      إلى التخصصات والمواد الجامعية.
+    </p>
+
+    <div class="buttons">
+      <a href="#fields" class="primary">
+        التخصصات 🎓
+      </a>
+
+      <a href="#schedule" class="secondary">
+        تنظيم الوقت 🗓️
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+<section class="neon-fields" id="fields">
+
+  <div class="neon-fields-title">
+    <div class="graduation-icon">🎓</div>
+    <span>المجالات الجامعية</span>
+    <h2>اختر مجالك الدراسي</h2>
+    <p>تخصصات السنة الأولى والمواد التعليمية في مكان واحد</p>
+  </div>
+
+  <div class="neon-fields-grid">
+
+    <!-- حقوق والعلوم السياسية -->
+    <div class="neon-field law-field">
+
+      <div class="neon-field-head">
+        <div>
+          <span class="field-label">المجال</span>
+          <h3>الحقوق والعلوم السياسية</h3>
+        </div>
+        <div class="neon-field-icon">⚖️</div>
+      </div>
+
+      <div class="neon-specialties">
+
+        <button class="neon-specialty">
+          <span>⚖</span>
+          <b>الحقوق</b>
+          <small>(01)</small>
+        </button>
+
+        <button class="neon-specialty">
+          <span>◉</span>
+          <b>العلوم السياسية</b>
+          <small>(01)</small>
+        </button>
+
+        <button class="neon-specialty">
+          <span>♟</span>
+          <b>العلاقات الدولية</b>
+          <small>(01)</small>
+        </button>
+
+      </div>
+
+      <button class="show-specialties">عرض جميع التخصصات <strong>‹</strong></button>
+
+    </div>
+
+
+    <!-- رياضيات وإعلام آلي -->
+    <div class="neon-field math-field">
+
+      <div class="neon-field-head">
+        <div>
+          <span class="field-label">المجال</span>
+          <h3>رياضيات وإعلام آلي</h3>
+        </div>
+        <div class="neon-field-icon">〈/〉</div>
+      </div>
+
+      <div class="neon-specialties">
+
+        <button class="neon-specialty">
+          <span>✣</span>
+          <b>رياضيات</b>
+          <small>(01)</small>
+        </button>
+
+        <button class="neon-specialty">
+          <span>▣</span>
+          <b>رياضيات تطبيقية</b>
+          <small>(01)</small>
+        </button>
+
+        <button class="neon-specialty">
+          <span>▣</span>
+          <b>إعلام آلي</b>
+          <small>(01)</small>
+        </button>
+
+      </div>
+
+      <button class="show-specialties">عرض جميع التخصصات <strong>‹</strong></button>
+
+    </div>
+
+
+    <!-- علوم الطبيعة والحياة -->
+    <div class="neon-field biology-field">
+
+      <div class="neon-field-head">
+        <div>
+          <span class="field-label">المجال</span>
+          <h3>علوم الطبيعة والحياة</h3>
+        </div>
+        <div class="neon-field-icon">🌿</div>
+      </div>
+
+      <div class="neon-specialties">
+
+        <button class="neon-specialty">
+          <span>🌱</span>
+          <b>بيولوجيا</b>
+          <small>(01)</small>
+        </button>
+
+        <button class="neon-specialty">
+          <span>◉</span>
+          <b>علوم زراعية</b>
+          <small>(01)</small>
+        </button>
+
+        <button class="neon-specialty">
+          <span>♧</span>
+          <b>بيئة وتنوع بيولوجي</b>
+          <small>(01)</small>
+        </button>
+
+      </div>
+
+      <button class="show-specialties">عرض جميع التخصصات <strong>‹</strong></button>
+
+    </div>
+
+
+    <!-- علوم وتكنولوجيا -->
+    <div class="neon-field technology-field">
+
+      <div class="neon-field-head">
+        <div>
+          <span class="field-label">المجال</span>
+          <h3>علوم وتكنولوجيا</h3>
+        </div>
+        <div class="neon-field-icon">⚙️</div>
+      </div>
+
+      <div class="neon-specialties">
+
+        <button class="neon-specialty">
+          <span>⌁</span>
+          <b>هندسة مدنية</b>
+          <small>(01)</small>
+        </button>
+
+        <button class="neon-specialty">
+          <span>◈</span>
+          <b>هندسة ميكانيكية</b>
+          <small>(01)</small>
+        </button>
+
+        <button class="neon-specialty">
+          <span>♢</span>
+          <b>هندسة كهربائية</b>
+          <small>(01)</small>
+        </button>
+
+        <button class="neon-specialty">
+          <span>◎</span>
+          <b>تكنولوجيا المعلومات</b>
+          <small>(01)</small>
+        </button>
+
+      </div>
+
+      <button class="show-specialties">عرض جميع التخصصات <strong>‹</strong></button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="schedule" id="schedule">
+
+  <div class="title">
+
+    <h2>🗓️ جدول تنظيم الوقت</h2>
+
+    <p>
+      جدول فارغ يمكنك استعماله لتنظيم برنامجك
+    </p>
+
+  </div>
+
+
+  <div class="table-container">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>الوقت</th>
+          <th>الأحد</th>
+          <th>الإثنين</th>
+          <th>الثلاثاء</th>
+          <th>الأربعاء</th>
+          <th>الخميس</th>
+          <th>الجمعة</th>
+          <th>السبت</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td class="time">08:00 - 10:00</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+          <td class="time">10:00 - 12:00</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+          <td class="time">12:00 - 14:00</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+          <td class="time">14:00 - 16:00</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+          <td class="time">16:00 - 18:00</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+          <td class="time">18:00 - 20:00</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+
+<footer>
+  © 2026 Youbi DZ University — منصة Youbi DZ University ترحب بيكم 🇩🇿
+</footer>
+
+
+<script>
+
+function toggleTheme(){
+
+  document.body.classList.toggle("light");
+
+  const button = document.getElementById("theme");
+
+  if(document.body.classList.contains("light")){
+
+    button.textContent="☀️";
+    localStorage.setItem("theme","light");
+
+  }else{
+
+    button.textContent="🌙";
+    localStorage.setItem("theme","dark");
+
+  }
+
+}
+
+if(localStorage.getItem("theme")==="light"){
+
+  document.body.classList.add("light");
+
+  document.getElementById("theme").textContent="☀️";
+
+}
+
+</script>
+
+</body>
+</html>
+
+<style>
+/* ===== تصميم جديد للتخصصات ===== */
+
+
+.fields .title{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:white;
+  margin-bottom:30px;
+}
+
+.fields .title h2{
+  font-size:30px;
+  margin:0 0 8px;
+}
+
+.fields .title p{
+  color:#d5e7e5;
+  margin:0;
+}
+
+
+
+.field-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:20px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:22px;
+  background:rgba(255,255,255,.10);
+  backdrop-filter:blur(12px);
+  color:white;
+  transition:.25s;
+}
+
+.field-card:hover{
+  transform:translateY(-5px);
+  background:rgba(255,255,255,.16);
+}
+
+
+
+.field-info h3{
+  margin:0 0 5px;
+  font-size:19px;
+}
+
+.field-info small{
+  display:block;
+  color:#bcd1d5;
+  margin-bottom:10px;
+}
+
+.common{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:10px;
+  background:#28d982;
+  color:#062719;
+  font-weight:700;
+}
+
+
+
+.specialties span{
+  padding:7px 10px;
+  border-radius:10px;
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.15);
+  font-size:13px;
+}
+
+/* ===== جدول الوقت التفاعلي ===== */
+.schedule{
+  margin-top:45px;
+}
+
+.schedule .table-container{
+  overflow-x:auto;
+  border-radius:20px;
+}
+
+.schedule table{
+  width:100%;
+  min-width:800px;
+  border-collapse:separate;
+  border-spacing:0;
+  overflow:hidden;
+}
+
+.schedule th{
+  padding:14px 10px;
+  background:#123c4d;
+  color:white;
+  font-weight:700;
+}
+
+.schedule td{
+  min-width:100px;
+  height:58px;
+  padding:8px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+}
+
+.schedule td.time{
+  min-width:120px;
+  font-weight:700;
+  text-align:center;
+  background:rgba(40,217,130,.12);
+}
+
+.schedule td.editable{
+  cursor:text;
+  transition:.2s;
+}
+
+.schedule td.editable:hover,
+.schedule td.editable:focus{
+  background:rgba(40,217,130,.12);
+  outline:2px solid #28d982;
+  outline-offset:-2px;
+}
+
+.schedule td.editable:empty::before{
+  content:"اضغط للكتابة";
+  color:var(--muted);
+  opacity:.7;
+  font-size:12px;
+}
+
+@media(max-width:600px){
+  
+
+  
+
+  .fields .title h2{
+    font-size:25px;
+  }
+}
+</style>
+
+<script>
+/* جعل خانات جدول الوقت قابلة للكتابة */
+document.addEventListener("DOMContentLoaded", function(){
+
+  const cells = document.querySelectorAll(".schedule tbody td:not(.time)");
+
+  cells.forEach(function(cell){
+
+    cell.classList.add("editable");
+    cell.setAttribute("contenteditable","true");
+    cell.setAttribute("spellcheck","false");
+
+    cell.addEventListener("input", function(){
+      const key = "youbi_schedule_" + this.parentElement.rowIndex + "_" + this.cellIndex;
+      localStorage.setItem(key, this.innerText);
+    });
+
+    const key = "youbi_schedule_" + cell.parentElement.rowIndex + "_" + cell.cellIndex;
+    const saved = localStorage.getItem(key);
+
+    if(saved){
+      cell.innerText = saved;
+    }
+  });
+
+});
+</script>
+
+
+<style>
+/* ===== خلفية الموقع كاملة ===== */
+body{
+  background:
+    linear-gradient(rgba(4,18,30,.82),rgba(4,18,30,.88)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=2000&q=90")
+    center center / cover fixed no-repeat;
+}
+
+/* الوضع النهاري */
+body.light{
+  background:
+    linear-gradient(rgba(242,246,248,.82),rgba(242,246,248,.90)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=2000&q=90")
+    center center / cover fixed no-repeat;
+}
+
+/* ترحيب Youbi DZ University */
+.welcome-title{
+  font-size:clamp(32px,8vw,68px);
+  font-weight:900;
+  letter-spacing:1px;
+  line-height:1.2;
+  margin:20px auto;
+  text-align:center;
+  background:linear-gradient(90deg,#28d982,#7df5bd,#ffffff,#28d982);
+  background-size:300% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:welcomeGlow 5s linear infinite;
+  text-shadow:0 0 25px rgba(40,217,130,.18);
+}
+
+@keyframes welcomeGlow{
+  to{background-position:300% center;}
+}
+
+
+
+</style>
+
+
+
+
+<style>
+/* ===== أزرار المواد التعليمية ===== */
+.material-actions{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+  margin-top:14px;
+}
+
+.material-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-height:42px;
+  padding:8px 10px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.09);
+  color:white;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.material-btn:hover{
+  transform:translateY(-2px);
+  background:rgba(40,217,130,.18);
+  border-color:#28d982;
+}
+
+
+
+@media(max-width:480px){
+  .material-actions{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .material-btn{
+    font-size:12px;
+  }
+}
+</style>
+
+
+
+
+<style>
+.material-actions{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.material-btn{
+  display:block;
+  padding:14px 10px;
+  border-radius:14px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  background:rgba(20,120,120,.85);
+  border:1px solid rgba(255,255,255,.15);
+  font-weight:700;
+  transition:.2s;
+}
+
+.material-btn:hover{
+  transform:translateY(-2px);
+  background:rgba(30,160,140,.95);
+}
+
+@media(max-width:600px){
+  .material-actions{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const response = await fetch("/materials/data.json");
+    const data = await response.json();
+
+    document.querySelectorAll(".field-card").forEach(card => {
+      const title = card.querySelector("h3");
+      if (!title) return;
+
+      const fieldName = title.textContent.trim();
+      const field = data[fieldName];
+      if (!field) return;
+
+      let box = card.querySelector(".subjects-materials");
+      if (!box) {
+        box = document.createElement("div");
+        box.className = "subjects-materials";
+        card.appendChild(box);
+      }
+
+      box.innerHTML = "";
+
+      Object.entries(field).forEach(([year, subjects]) => {
+        const yearBox = document.createElement("div");
+        yearBox.className = "material-year";
+
+        const yearTitle = document.createElement("h4");
+        yearTitle.textContent = year;
+        yearBox.appendChild(yearTitle);
+
+        subjects.forEach(subject => {
+          const subjectBox = document.createElement("div");
+          subjectBox.className = "subject-box";
+
+          subjectBox.innerHTML = `
+            <strong>${subject}</strong>
+            <div class="material-actions">
+              <a href="#" class="material-btn">📚 دروس</a>
+              <a href="#" class="material-btn">📄 ملخصات PDF</a>
+              <a href="#" class="material-btn">✏️ تمارين PDF</a>
+              <a href="#" class="material-btn">▶️ فيديوهات YouTube</a>
+            </div>
+          `;
+
+          yearBox.appendChild(subjectBox);
+        });
+
+        box.appendChild(yearBox);
+      });
+    });
+  } catch (error) {
+    console.error("خطأ في تحميل المواد:", error);
+  }
+});
+</script>
+
+<style>
+.subjects-materials{
+  margin-top:20px;
+}
+
+.material-year{
+  margin-top:20px;
+}
+
+.material-year h4{
+  margin-bottom:12px;
+}
+
+.subject-box{
+  margin-bottom:15px;
+  padding:15px;
+  border-radius:16px;
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.subject-box strong{
+  display:block;
+  margin-bottom:12px;
+  font-size:17px;
+}
+
+.material-actions{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.material-btn{
+  display:block;
+  padding:12px 8px;
+  border-radius:12px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  background:rgba(20,120,120,.85);
+  font-weight:700;
+}
+
+.material-btn:hover{
+  background:rgba(30,160,140,.95);
+}
+
+@media(max-width:600px){
+  .material-actions{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+<script src="/materials.js"></script>

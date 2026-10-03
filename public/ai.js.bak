@@ -1,0 +1,238 @@
+(function () {
+  const old = document.getElementById("youbiAI");
+  if (old) old.remove();
+
+  const section = document.createElement("section");
+  section.id = "youbiAI";
+  section.className = "ai-section";
+
+  section.innerHTML = `
+    <div class="ai-title">🧠 خريطة فهم الدرس</div>
+
+    <p class="ai-subtitle">
+      أضف صورة الدرس وسيتم قراءتها وتحويلها إلى خريطة فهم مجاناً
+    </p>
+
+    <label class="ai-upload">
+      🖼️ إضافة صورة الدرس
+      <input id="aiImage" type="file" accept="image/*" hidden>
+    </label>
+
+    <div id="aiImagePreview"></div>
+    <div id="aiResult" class="ai-result"></div>
+  `;
+
+  const schedule =
+    document.querySelector("table") ||
+    document.querySelector(".schedule");
+
+  if (schedule && schedule.parentElement) {
+    schedule.parentElement.appendChild(section);
+  } else {
+    document.body.appendChild(section);
+  }
+
+  const imageInput = document.getElementById("aiImage");
+  const preview = document.getElementById("aiImagePreview");
+  const result = document.getElementById("aiResult");
+
+  imageInput.addEventListener("change", async function () {
+    const file = this.files[0];
+
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      result.innerHTML =
+        `<div class="ai-error">❌ اختار صورة فقط.</div>`;
+      return;
+    }
+
+    preview.innerHTML = `
+      <div class="selected-image">
+        <img src="${URL.createObjectURL(file)}" alt="صورة الدرس">
+      </div>
+    `;
+
+    result.innerHTML = `
+      <div class="ai-loading">
+        🔎 جاري قراءة الكتابة من الصورة...
+        <br>
+        🧠 جاري بناء خريطة الفهم...
+      </div>
+    `;
+
+    try {
+      await loadOCR();
+
+      const worker = await Tesseract.createWorker("ara+fra+eng");
+
+      const { data } = await worker.recognize(file);
+
+      await worker.terminate();
+
+      const text = data.text.trim();
+
+      if (!text) {
+        result.innerHTML = `
+          <div class="ai-error">
+            ❌ ما قدرتش نقرأ الكتابة من الصورة.
+            <br>
+            حاول تستعمل صورة أوضح.
+          </div>
+        `;
+        return;
+      }
+
+      createMindMap(text);
+
+    } catch (error) {
+      console.error(error);
+
+      result.innerHTML = `
+        <div class="ai-error">
+          ❌ تعذر قراءة الصورة.
+          <br>
+          تأكد من اتصال الإنترنت وحاول مرة أخرى.
+        </div>
+      `;
+    }
+  });
+
+  function loadOCR() {
+    return new Promise((resolve, reject) => {
+      if (window.Tesseract) {
+        resolve();
+        return;
+      }
+
+      const script = document.createElement("script");
+
+      script.src =
+        "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js";
+
+      script.onload = resolve;
+      script.onerror = reject;
+
+      document.head.appendChild(script);
+    });
+  }
+
+  function createMindMap(text) {
+    const lines = text
+      .split(/\n+/)
+      .map(x => x.trim())
+      .filter(x => x.length > 2);
+
+    if (!lines.length) {
+      result.innerHTML =
+        `<div class="ai-error">❌ لم يتم العثور على نص واضح.</div>`;
+      return;
+    }
+
+    const title =
+      lines[0].length <= 100
+        ? lines[0]
+        : "خريطة فهم الدرس";
+
+    const content = lines.slice(
+      title === lines[0] ? 1 : 0
+    );
+
+    const groups = [];
+    let current = null;
+
+    content.forEach(line => {
+      const clean = line
+        .replace(/^[-•*▪◦●]\s*/, "")
+        .replace(/^\d+[\).\s-]+/, "")
+        .trim();
+
+      if (!clean) return;
+
+      const looksLikeTitle =
+        clean.length < 80 &&
+        (
+          /^(تعريف|مقدمة|خاتمة|أهمية|أنواع|خصائص|مكونات|وظائف|مراحل|أهداف|أسباب|نتائج|مفهوم|العناصر|الخصائص)/i.test(clean) ||
+          /^[A-ZÀ-Ýأ-ي][^.!؟:]{2,60}:?$/.test(clean)
+        );
+
+      if (looksLikeTitle || !current) {
+        current = {
+          title: clean,
+          points: []
+        };
+
+        groups.push(current);
+      } else {
+        current.points.push(clean);
+      }
+    });
+
+    if (!groups.length) {
+      groups.push({
+        title: "المعلومات الأساسية",
+        points: content.slice(0, 12)
+      });
+    }
+
+    renderMap(title, groups);
+  }
+
+  function renderMap(title, groups) {
+    let html = `
+      <div class="mind-map">
+
+        <div class="mind-center">
+          🧠 ${escapeHTML(title)}
+        </div>
+
+        <div class="mind-nodes">
+    `;
+
+    groups.slice(0, 12).forEach(group => {
+      html += `
+        <div class="mind-node">
+          <h4>📌 ${escapeHTML(group.title)}</h4>
+      `;
+
+      if (group.points.length) {
+        html += `<ul>`;
+
+        group.points.slice(0, 10).forEach(point => {
+          html += `
+            <li>${escapeHTML(point)}</li>
+          `;
+        });
+
+        html += `</ul>`;
+      } else {
+        html += `
+          <p>لا توجد نقاط إضافية في هذا المحور.</p>
+        `;
+      }
+
+      html += `</div>`;
+    });
+
+    html += `
+        </div>
+
+        <div class="map-note">
+          ℹ️ الخريطة تم إنشاؤها محلياً من النص المقروء في الصورة.
+        </div>
+
+      </div>
+    `;
+
+    result.innerHTML = html;
+  }
+
+  function escapeHTML(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+})();

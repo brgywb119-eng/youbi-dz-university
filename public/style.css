@@ -1,0 +1,18 @@
+
+/* إصلاح ظهور جميع موارد مواد الرياضيات */
+.learning-content {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.learning-section {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.learning-card {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}

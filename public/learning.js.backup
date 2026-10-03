@@ -1,0 +1,269 @@
+(function () {
+
+const data = {
+
+"الحقوق": {
+
+"مدخل إلى العلوم القانونية": {
+lessons:[
+["📄 محاضرات مدخل إلى العلوم القانونية","https://fsecg.univ-djelfa.dz/ar/wp-content/uploads/2023/09/Dr-OTHMANI-MARABOUT-Habib.pdf"]
+],
+summaries:[
+["📝 ملخص مفهوم القانون","https://fsecg.univ-djelfa.dz/ar/wp-content/uploads/2023/09/Dr-OTHMANI-MARABOUT-Habib.pdf"]
+],
+exercises:[
+["🧩 تمارين حول القاعدة القانونية","#"]
+],
+videos:[
+["▶️ مدخل إلى العلوم القانونية - سنة أولى حقوق","https://www.youtube.com/watch?v=Gn1DquuX4Gs"]
+]
+},
+
+"القانون الدستوري": {
+lessons:[
+["📄 محاضرات القانون الدستوري - سنة أولى حقوق","https://cte.univ-setif2.dz/moodle/pluginfile.php/25068/mod_resource/content/1/%D9%85%D8%AD%D8%A7%D8%B6%D8%B1%D8%A7%D8%AA%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%A7%D9%84%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D9%8A.PDF"],
+["📚 مطبوعة القانون الدستوري - السنة الأولى","https://en.univ-setif2.dz/mod/folder/view.php?id=3376&lang=ar"]
+],
+summaries:[
+["📝 ملخص القانون الدستوري","https://en.univ-setif2.dz/mod/folder/view.php?id=2974"]
+],
+exercises:[
+["🧩 اختبار وتقويم القانون الدستوري","https://cte.univ-setif2.dz/moodle/course/view.php?id=276"]
+],
+videos:[
+["▶️ مفهوم القانون الدستوري - شرح جامعي","https://cte.univ-setif2.dz/moodle/course/view.php?id=176"]
+]
+},
+
+"تاريخ النظم القانونية": {
+lessons:[
+["📚 محاضرات تاريخ النظم القانونية","https://moodle.univ-djelfa.dz/course/index.php?categoryid=212&lang=ar"]
+],
+summaries:[
+["📝 ملخص شامل تاريخ النظم القانونية - S1","https://www.youtube.com/watch?v=0LCIUzzFrgQ"]
+],
+exercises:[
+["🧩 تمارين ومراجعة تاريخ النظم","#"]
+],
+videos:[
+["▶️ ملخص تاريخ النظم القانونية - سنة أولى حقوق","https://www.youtube.com/watch?v=0LCIUzzFrgQ"]
+]
+},
+
+"مدخل إلى علم السياسة": {
+lessons:[
+["📚 دروس مدخل إلى علم السياسة","https://moodle.univ-djelfa.dz/course/index.php?categoryid=212&lang=ar"]
+],
+summaries:[
+["📝 ملخص مدخل إلى علم السياسة","#"]
+],
+exercises:[
+["🧩 تمارين مدخل إلى علم السياسة","#"]
+],
+videos:[
+["▶️ محاضرات علم السياسة - بحث يوتيوب","https://www.youtube.com/results?search_query=مدخل+إلى+علم+السياسة+سنة+أولى+حقوق"]
+]
+},
+
+"منهجية العلوم القانونية": {
+lessons:[
+["📚 محاضرات منهجية العلوم القانونية","https://fdsp.univ-djelfa.dz/ar/?page_id=888"]
+],
+summaries:[
+["📝 ملخص منهجية العلوم القانونية","#"]
+],
+exercises:[
+["🧩 تمارين المنهجية القانونية","#"]
+],
+videos:[
+["▶️ منهجية العلوم القانونية - بحث يوتيوب","https://www.youtube.com/results?search_query=منهجية+العلوم+القانونية+سنة+أولى+حقوق"]
+]
+},
+
+"مصطلحات قانونية": {
+lessons:[
+["📚 المصطلحات القانونية باللغة الأجنبية","#"]
+],
+summaries:[
+["📝 ملخص المصطلحات القانونية","#"]
+],
+exercises:[
+["🧩 تمارين المصطلحات القانونية","#"]
+],
+videos:[
+["▶️ Legal English - بحث يوتيوب","https://www.youtube.com/results?search_query=مصطلحات+قانونية+سنة+أولى+حقوق+الجزائر"]
+]
+},
+
+"اللغة الأجنبية": {
+lessons:[
+["📚 English for Law Students","#"]
+],
+summaries:[
+["📝 ملخص اللغة الأجنبية","#"]
+],
+exercises:[
+["🧩 تمارين اللغة الإنجليزية","#"]
+],
+videos:[
+["▶️ English for Law - بحث يوتيوب","https://www.youtube.com/results?search_query=English+for+law+students+Algeria"]
+]
+},
+
+"الإعلام الآلي": {
+lessons:[
+["📚 أساسيات الإعلام الآلي","#"]
+],
+summaries:[
+["📝 ملخص الإعلام الآلي","#"]
+],
+exercises:[
+["🧩 تمارين الإعلام الآلي","#"]
+],
+videos:[
+["▶️ إعلام آلي سنة أولى جامعة - بحث يوتيوب","https://www.youtube.com/results?search_query=إعلام+آلي+سنة+أولى+جامعة+الجزائر"]
+]
+}
+
+}
+
+};
+
+function getSpecialty(card){
+const panel=card.closest(".subjects-panel");
+if(!panel)return "";
+const h=panel.querySelector("h3");
+return h ? h.textContent.replace("🎓","").trim() : "";
+}
+
+function makeCards(items,empty){
+if(!items || !items.length)
+return `<div class="empty-learning">${empty}</div>`;
+
+return items.map(function(item){
+return `
+<a class="learning-card" href="${item[1]}" target="_blank" rel="noopener">
+<span>${item[0]}</span>
+<span class="open-resource">فتح ↗</span>
+</a>`;
+}).join("");
+}
+
+function openLearning(card){
+
+const subject=card.textContent.replace("📚","").trim();
+const specialty=getSpecialty(card);
+
+const info=(data[specialty] && data[specialty][subject]) || {
+lessons:[],summaries:[],exercises:[],videos:[]
+};
+
+document.querySelector(".learning-overlay")?.remove();
+
+const overlay=document.createElement("div");
+overlay.className="learning-overlay";
+
+overlay.innerHTML=`
+<div class="learning-box">
+
+<button class="learning-close">×</button>
+
+<div class="learning-header">
+<div class="learning-icon">⚖️</div>
+<div>
+<div class="learning-label">${specialty}</div>
+<h2>${subject}</h2>
+<small>السنة الأولى ليسانس حقوق</small>
+</div>
+</div>
+
+<div class="learning-tabs">
+
+<button class="learning-tab active" data-tab="lessons">
+📖 الدروس
+</button>
+
+<button class="learning-tab" data-tab="summaries">
+📝 الملخصات
+</button>
+
+<button class="learning-tab" data-tab="exercises">
+🧩 التمارين
+</button>
+
+<button class="learning-tab" data-tab="videos">
+▶️ فيديوهات
+</button>
+
+</div>
+
+<div class="learning-content">
+
+<section class="learning-section active" data-section="lessons">
+${makeCards(info.lessons,"لا توجد دروس PDF مضافة حاليا")}
+</section>
+
+<section class="learning-section" data-section="summaries">
+${makeCards(info.summaries,"لا توجد ملخصات مضافة حاليا")}
+</section>
+
+<section class="learning-section" data-section="exercises">
+${makeCards(info.exercises,"لا توجد تمارين مضافة حاليا")}
+</section>
+
+<section class="learning-section" data-section="videos">
+${makeCards(info.videos,"لا توجد فيديوهات مضافة حاليا")}
+</section>
+
+</div>
+</div>
+`;
+
+document.body.appendChild(overlay);
+
+overlay.querySelector(".learning-close").onclick=()=>{
+overlay.remove();
+};
+
+overlay.addEventListener("click",function(e){
+if(e.target===overlay) overlay.remove();
+});
+
+overlay.querySelectorAll(".learning-tab").forEach(function(tab){
+
+tab.onclick=function(){
+
+overlay.querySelectorAll(".learning-tab")
+.forEach(x=>x.classList.remove("active"));
+
+overlay.querySelectorAll(".learning-section")
+.forEach(x=>x.classList.remove("active"));
+
+tab.classList.add("active");
+
+const section=overlay.querySelector(
+'[data-section="'+tab.dataset.tab+'"]'
+);
+
+if(section) section.classList.add("active");
+
+};
+
+});
+
+}
+
+document.addEventListener("click",function(e){
+
+const card=e.target.closest(".subject-card");
+
+if(card){
+e.preventDefault();
+openLearning(card);
+}
+
+});
+
+console.log("✅ حقوق: الدروس والملخصات والتمارين والفيديوهات جاهزة");
+
+})();

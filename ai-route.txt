@@ -1,0 +1,154 @@
+
+app.post("/api/ai", async (req, res) => {
+
+  try {
+
+    const apiKey = process.env.OPENAI_API_KEY;
+
+    if (!apiKey) {
+      return res.status(500).json({
+        error: "مفتاح الذكاء الاصطناعي غير مضبوط في السيرفر."
+      });
+    }
+
+    const type = req.body?.type;
+    const text = String(req.body?.text || "").trim();
+
+    if (!text) {
+      return res.status(400).json({
+        error: "لم يتم إرسال نص الدرس."
+      });
+    }
+
+    if (text.length > 50000) {
+      return res.status(400).json({
+        error: "الدرس طويل جدا. أرسل جزءا أصغر."
+      });
+    }
+
+    let instruction = "";
+
+    if (type === "summary") {
+
+      instruction = `
+أنت مساعد تعليمي جزائري.
+
+لخص الدرس التالي للطالب باللغة العربية الواضحة.
+
+الشروط:
+- حافظ على المعلومات المهمة.
+- لا تخترع معلومات غير موجودة في النص.
+- قسم الملخص إلى عناوين واضحة.
+- استخرج التعاريف والقوانين والمفاهيم المهمة.
+- اجعل الملخص سهل المراجعة.
+- إذا كان النص بالفرنسية أو الإنجليزية، يمكن استعمال المصطلح الأصلي بين قوسين.
+
+نص الدرس:
+
+${text}
+`;
+
+    } else {
+
+      instruction = `
+أنت مساعد تعليمي.
+
+حوّل الدرس التالي إلى خريطة فهم منظمة.
+
+أرجع JSON فقط بهذا الشكل:
+
+{
+  "title": "عنوان الدرس",
+  "nodes": [
+    {
+      "title": "المحور الأول",
+      "points": [
+        "النقطة الأولى",
+        "النقطة الثانية",
+        "النقطة الثالثة"
+      ]
+    }
+  ]
+}
+
+الشروط:
+- لا تخترع معلومات.
+- استخرج الأفكار الرئيسية من النص.
+- رتب المعلومات من العام إلى الخاص.
+- اجعل كل نقطة قصيرة وواضحة.
+- اللغة العربية.
+
+نص الدرس:
+
+${text}
+`;
+
+    }
+
+    const response = await fetch(
+      "https://api.openai.com/v1/responses",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer " + apiKey
+        },
+
+        body: JSON.stringify({
+          model: process.env.OPENAI_MODEL || "gpt-6-luna",
+          input: instruction,
+          max_output_tokens: 3000
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+
+      console.error("OpenAI error:", data);
+
+      return res.status(500).json({
+        error:
+          data?.error?.message ||
+          "تعذر الاتصال بالذكاء الاصطناعي."
+      });
+
+    }
+
+    const output =
+      data.output_text ||
+      (
+        data.output &&
+        data.output
+          .flatMap(x => x.content || [])
+          .map(x => x.text || "")
+          .join("")
+      ) ||
+      "";
+
+    if (!output) {
+
+      return res.status(500).json({
+        error: "الذكاء الاصطناعي لم يرجع نتيجة."
+      });
+
+    }
+
+    res.json({
+      result: output
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    res.status(500).json({
+      error: "حدث خطأ في السيرفر."
+    });
+
+  }
+
+});
+
